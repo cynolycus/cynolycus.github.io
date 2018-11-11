@@ -1,0 +1,35 @@
+{% for entry in site.data.nav %}
+{% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
+    {% if fullurl == page.url %}
+        {% assign current_page = fullurl %}
+        {% break %}
+    {% elsif page.url contains fullurl %}
+        {% assign current_page = fullurl %}
+    {% endif %}
+{% endfor %}
+<nav class="container nav">
+    <ul class="navbar-nav nav">
+    {% for entry in site.data.nav %}
+        {% if entry.url == current_page %}
+            {% assign current = 'active' %}
+        {% else %}
+           {% assign current = null %}
+        {% endif %}
+        {% assign sublinks = entry.sublinks %}
+        {% if sublinks %}
+        <li class="dropdown {{ current }}">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ entry.title }}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                {% for sublink in sublinks %}
+                <li><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% else %}
+        <li class="dropdown {{ current }}"><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</nav>
+
+

@@ -1,0 +1,38 @@
+#Site
+locale: "en-US"
+title: "cynolyc.us"
+title_sep: "::"
+description: Another Coding Blog
+url: https://cynolyc.us
+repository: https://github.com/cynolycus/cynolycus.github.io
+wpm: 200
+author: "Ben Sochor"
+author_email: "bmsochor@gmail.com"
+permalink: /blog/:year/:month/:day/:title/
+theme: minima
+google_analytics: UA-110479654-1
+github_username:  cynolycus
+linkedin_username: bmsochor
+rss: rss
+#Files
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+header_pages:
+  - about.md
+  - projects.md
+include:
+  - .htaccess
+  - _pages
+  - _posts
+exclude:
+  - Gemfile
+  - Gemfile.lock
+keep_files:
+
+# Build settings
+markdown: kramdown
+theme: minima
+show_excerpts: true
+#Sass
+sass:
+    sass_dir: _scss

@@ -1,0 +1,14 @@
+# Belongs at: /_data/nav.yml
+main:
+- title: Home
+  url: /
+
+- title: Projects
+  url: /projects/
+  sublinks:
+
+- title: Resume
+  url: /resume.html
+
+- title: About
+  url: /about.html
