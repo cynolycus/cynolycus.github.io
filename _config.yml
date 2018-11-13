@@ -8,7 +8,7 @@ repository: https://github.com/cynolycus/cynolycus.github.io
 wpm: 200
 author: "Ben Sochor"
 author_email: "bmsochor@gmail.com"
-theme: minima
+theme: jekyll-theme-hacker
 google_analytics: UA-110479654-1
 github_username:  cynolycus
 linkedin_username: bmsochor
