@@ -1,8 +1,8 @@
 #Site
 locale: "en-US"
 title: "cynolyc.us"
-title_sep: "::"
-description: Another Coding Blog
+title_sep: " :: "
+description: Developing Developers
 url: https://cynolyc.us
 repository: https://github.com/cynolycus/cynolycus.github.io
 wpm: 200
@@ -10,8 +10,8 @@ author: "Ben Sochor"
 author_email: "bmsochor@gmail.com"
 google_analytics: UA-110479654-1
 github_username:  cynolycus
-linkedin_username: bmsochor
 twitter_username: cynolycus
+linkedin_username: bmsochor
 #collections
 collections:
   posts:
