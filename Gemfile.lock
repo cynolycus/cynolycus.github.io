@@ -72,6 +72,7 @@ GEM
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
+    wdm (0.1.1)
 
 PLATFORMS
   x64-mingw32
@@ -83,6 +84,7 @@ DEPENDENCIES
   jekyll-paginate
   json
   minima
+  wdm
 
 BUNDLED WITH
-   1.16.1
+   1.17.1

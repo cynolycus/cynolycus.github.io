@@ -1,32 +1,40 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-	<div class="tags">
-    {% for tag in page.tags %}
-        {% capture tag_name %}{{ tag }}{% endcapture %}
-        <a class="tag" href="/tag/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
-      {% endfor %}
-</div>
+    {% if site.author %}
+      By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="p-author h-card" itemprop="name" href="mailto:{{site.author_email}}">{{ site.author }}</a></span>
+    {% endif %}
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        Created: {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+      {% if page.last_modified_at %}
+      • <time class="dt-published" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="datePublished">
+        Updated: {{ page.last_modified_at | date: date_format }}
+      </time>
+      {% endif %}
+      {% if page.series %}
+        • <span class="post-meta"> Series: <a href="/series/{{ page.series }}">{{ page.series }}</a></span>
+      {% endif %}
+      {% if page.applies_to %}
+        <br/><span>Applies to {{page.applies_to}} version(s): {{page.applies_to_vers | join:", "}}</span>
+      {% endif %}
+      </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+  {% include tags.html %}
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

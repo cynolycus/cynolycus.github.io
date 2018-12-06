@@ -11,18 +11,17 @@ $base-line-height: 1.5 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
-$background-color: #fdfdfd !default;
-$brand-color:      #2a7ae2 !default;
+$background-color: #fff !default;
+$brand-color:      #0366d6 !default;
 
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color:       #6a737d !default;
+$grey-color-light: lighten($grey-color, 50%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
 // Width of the content area
 $content-width:    800px !default;
-
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
@@ -39,14 +38,14 @@ $on-laptop:        800px !default;
   }
 }
 
-@mixin relative-font-size($ratio) {
+@mixin relative-font-size($ratio)  {
   font-size: $base-font-size * $ratio;
 }
-
 // Import partials.
 @import
+  "custom/vars/colors",
   "minima/base",
   "minima/layout",
   "minima/syntax-highlighting",
-  "minima/breadcrumb"
-;
+  "custom/base",
+  "custom/breadcrumb"

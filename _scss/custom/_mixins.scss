@@ -1,0 +1,13 @@
+@mixin code-badge ($lang, $type, $useBackground: true)
+{
+  $baseColor: code-color($lang, $type);
+  @include badge($baseColor);
+}
+@mixin badge ($baseColor, $useBackground: true)
+{
+  color:$baseColor;
+  border-color: $baseColor;
+  @if $useBackground {
+    background-color: lighten($baseColor,40%);
+  }
+}

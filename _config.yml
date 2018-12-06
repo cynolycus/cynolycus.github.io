@@ -2,7 +2,8 @@
 locale: "en-US"
 title: "cynolyc.us"
 title_sep: " :: "
-description: Developing Developers
+tagline: Developing Developers
+description: "Practical solutions and insights for the accidental developer."
 url: https://cynolyc.us
 repository: https://github.com/cynolycus/cynolycus.github.io
 wpm: 200
@@ -25,7 +26,7 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 header_pages:
   - about.md
-  - projects.md
+  - series.md
 include:
   - .htaccess
   - _pages
@@ -38,6 +39,9 @@ keep_files:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 theme: minima
 show_excerpts: true
 #Sass
