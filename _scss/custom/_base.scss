@@ -9,6 +9,9 @@ code {
   font-size: 15px;
   color:$grey-color-dark;
 }
+.highlighter-rouge pre.highlight{
+  background-color:$background-color;
+}
 .footnotes{
   @include relative-font-size(0.7);
 }
