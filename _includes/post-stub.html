@@ -11,7 +11,7 @@
   {% endif %}
 
   {% if post.series and include.hide_series != true %}
-    • <span class="post-meta"> Series: <a href="/series/{{ post.series }}">{{ post.series }}</a></span>
+    • <span class="post-meta"> Series: <a href="/series/{{ post.series | slugify }}">{{ post.series }}</a></span>
   {% endif %}
   <h3>
     <a class="post-link" href="{{ post.url | relative_url }}">
