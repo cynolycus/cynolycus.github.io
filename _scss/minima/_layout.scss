@@ -251,4 +251,11 @@
       @include relative-font-size(1.125);
     }
   }
+  h5 {
+    @include relative-font-size(1.15);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.1);
+    }
+  }
 }

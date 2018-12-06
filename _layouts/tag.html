@@ -2,20 +2,11 @@
 layout: default
 ---
 <h1>Filed Under <small>#{{ page.tag }}</small></h1>
+{%  assign pageTag = page.tag.first | default: page.tag %}
+{{ site.series[pageTag]}}
   <ul class="post-list">
-    {% for post in site.tags[page.tag] %}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      <hr>
+    {% for post in site.tags[pageTag] %}
+      {% include post-stub.html %}    
+      <hr class="o-post__hr">
       {%- endfor -%}
     </ul>

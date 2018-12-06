@@ -1,0 +1,4 @@
+@function code-color($key, $variant) {
+  $map: map-get($code-colors, $key);
+  @return map-get($map, $variant);
+}
