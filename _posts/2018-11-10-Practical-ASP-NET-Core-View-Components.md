@@ -35,52 +35,65 @@ Whether or not it accepts input parameters from the calling View/Controller, a V
 
 ## Constructing a View Component
 ### The View Component Class
-```csharp
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
-public class Sidebar : ViewComponent
-{
-  public async Task<IViewComponentResult> InvokeAsync()
-  {
-    return View();
-  }
-}
-```
+>`using`{:cs k} Microsoft.AspNetCore.Mvc;
+>
+>`using`{:cs k} System.Threading.Tasks;
+>
+>`public class`{:cs k} `Sidebar`{:cs ucl} : `ViewComponent`{:cs cl}
+>
+>{
+>>`public async`{:cs k} `Task`{:cs cl}<`IViewComponentResult`{:cs g}> `InvokeAsync`{:cs m}()
+>>
+>>{
+>>>`return`{:cs k} View();
+>>
+>>}
+>
+>}
+{:.o-code__block}
 
 In this barebones example, our View Component `Sidebar`{:cs ucl token} derives from `ViewComponent`{:cs cl token} and implements the required method `InvokeAsync()`{:cs m token} with no parameters, returning its Default View. However, as with most things in ASP.NET Core, there's more than one correct way to create a working View Component.
 
 They can also be defined by naming convention, applying "ViewComponent" as a suffix to the class name:
 
-```csharp
-// I'm a View Component!
-public class SidebarViewComponent
-{
-  // InvokeAsync()
-}
-```
+
+>`// I'm a View Component!`{:cs cm}
+>
+>`public class`{:cs k} `SidebarViewComponent`{:cs ucl}
+>
+>{
+>>`// InvokeAsync()`{:cs cm}
+>
+>}
+{:.o-code__block}
 
 Or, by decoration:
 
-```csharp
-// Me too!
-[ViewComponent]
-public class Sidebar
-{
-  // InvokeAsync()
-}
-```
+>`// Me too!`{:cs cm}
+>
+>`[ViewComponent]`{:cs g}
+>
+>`public class`{:cs k} `Sidebar`{:cs ucl}
+>
+>{
+>>`// InvokeAsync()`{:cs cm}
+>
+>}
+{:.o-code__block}
 
 By default, the View Component's name is the prefixed class name; the "ViewComponent" suffix is ignored. This can be overridden by setting the `ViewComponentAttribute.Name`{:cs k token} property of the base `ViewComponent`{:cs cl token}.
 
 **I personally use a combination of the first two approaches**:
 
-```csharp
-public class SidebarViewComponent : ViewComponent
-{
-  //InvokeAsync()
-}
-```
+
+>`public class`{:cs k} `SidebarViewComponent`{:cs ucl} : `ViewComponent`{:cs cl}
+>
+>{
+>>`// InvokeAsync()`{:cs cm}
+>
+>}
+{:.o-code__block}
 
 While it may be redundant, it also makes class relationships abundantly obvious (at least to Future You), viz. a `Sidebar`{:cs ucl token} object class or View Model and a `SidebarViewComponent`{:cs ucl token} to dictate lookup/rendering. Ultimately, it's down to preference and consistency; pick a format and stick with it!
 
@@ -146,17 +159,24 @@ Alternatively, the concrete implementation of the View Component can be passed a
 
 ### Invoking from a Controller Action
 While less common, invoking a View Component from a Controller action isn't unheard of. In fact, it's a common way of refreshing a View Component via AJAX without requesting the whole page and cherry picking the desired element(s). The `Controller`{:cs cl token} method `ViewComponent()`{:cs m token} returns `ViewComponentResult`{:cs cl token}, which implements `IActionResult`{:cs g token}, so any Controller action returning the latter can leverage it:
-```csharp
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-public class ComponentController : Controller
-{
-  public async Task<IActionResult> GetSidebarComponent()
-  {
-    return ViewComponent("Sidebar");
-  }
-}
-```
+
+>`using`{:cs k} Microsoft.AspNetCore.Mvc;
+>
+>`using`{:cs k} System.Threading.Tasks;
+>
+>`public class`{:cs k} `ComponentController`{:cs ucl} : `Controller`{:cs cl}
+>
+>{
+>>`public async`{:cs k} `Task`{:cs cl}<`IActionResult`{:cs g}> `GetSidebarComponent`{:cs m}()
+>>
+>>{
+>>>`return`{:cs k} ViewComponent(`"Sidebar"`{:cs cm});
+>>
+>>}
+>
+>}
+{:.o-code__block}
+
 Similarly to its Razor counterpart, `ViewComponent()`{:cs m token} has several overloads, accepting a required View Component name *or* type, and an optional anonymous object containing the View Component's parameters to be passed. While Model Binding is applicable to calling the Controller action itself, this still does not extend to invoking the View Component, which requires its parameters to be passed manually. All overloads return `ViewComponentResult`{:cs cl token}.
 #### ViewComponent() Overloads
 
