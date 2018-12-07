@@ -1,22 +1,26 @@
 <article class="post" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="{{ post.url | relative_url }}" />
   <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
+  <meta itemprop="author" itemtype="http://schema.org/Person" content="{{site.author}}" />
+  <meta itemprop="publisher" itemtype="http://schema.org/Organization" content="cynolyc.us" />
   <span class="post-meta">
   {% if post.last_modified_at %}
-  <time class="dt-published" datetime="{{ post.last_modified_at | date_to_xmlschema }}" itemprop="datePublished">
+  <time class="dt-published" datetime="{{ post.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
     Updated: {{ post.last_modified_at | date: date_format }}
-  </time>
+  </time> •
   {% else %}
+  <meta itemprop="dateModified" content="{{ post.date | date_to_xmlschema }}" />
+  {% endif %}
   <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
     Created: {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
     {{ post.date | date: date_format }}
   </time>
-  {% endif %}
   {% if post.series and include.hide_series != true %}
     • <span> Series: <a href="/series/{{ post.series | slugify }}">{{ post.series }}</a></span>
   {% endif %}
   <h1>
     <a class="post-link" itemprop="url" href="{{ post.url | relative_url }}">
-      <span itemprop="name">
+      <span itemprop="name headline">
       {% if include.alt_title %}
       {{include.alt_title}}
       {% else %}
