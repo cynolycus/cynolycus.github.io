@@ -47,3 +47,6 @@ show_excerpts: true
 #Sass
 sass:
     sass_dir: _scss
+#Plug-ins
+plugins:
+  - jekyll-sitemap
