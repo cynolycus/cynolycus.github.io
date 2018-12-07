@@ -3,6 +3,8 @@ layout: default
 ---
 
 <article class="post" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="{{ post.url | relative_url }}" />
+  <meta itemprop="publisher" itemtype="http://schema.org/Organization" content="cynolyc.us" />
   <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
   <meta itemprop="description"
         content="{{ page.description | truncatewords: 40 }}" />
@@ -10,7 +12,8 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     {% if site.author %}
       By <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a class="p-author h-card" itemprop="name" href="mailto:{{site.author_email}}">{{ site.author }}</a>
+        <meta itemprop="email" content="{{site.author_email}}"/>
+        <a class="p-author h-card" href="mailto:{{site.author_email}}"><span itemprop="name">{{ site.author }}</span></a>
       </span>
     {% endif %}
     <p class="post-meta">
@@ -22,6 +25,8 @@ layout: default
       • <time class="dt-published" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
         Updated {{ page.last_modified_at | date: date_format }}
       </time>
+      {% else %}
+      <meta itemprop="dateModified" content="{{ page.date | date_to_xmlschema }}" />
       {% endif %}
       {% if page.series %}
         <br/><span class="post-meta"> Series: <a href="/series/{{ page.series }}">{{ page.series }}</a></span>
@@ -42,6 +47,4 @@ layout: default
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %}
-
-  {% include schema/blog-post.html %}
 </article>
