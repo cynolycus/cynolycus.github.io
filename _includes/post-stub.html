@@ -1,4 +1,6 @@
-<span class="post-meta">
+<article class="post" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
+  <span class="post-meta">
   {% if post.last_modified_at %}
   <time class="dt-published" datetime="{{ post.last_modified_at | date_to_xmlschema }}" itemprop="datePublished">
     Updated: {{ post.last_modified_at | date: date_format }}
@@ -10,7 +12,7 @@
   </time>
   {% endif %}
   {% if post.series and include.hide_series != true %}
-    • <span class="post-meta"> Series: <a href="/series/{{ post.series | slugify }}">{{ post.series }}</a></span>
+    • <span> Series: <a href="/series/{{ post.series | slugify }}">{{ post.series }}</a></span>
   {% endif %}
   <h1>
     <a class="post-link" itemprop="url" href="{{ post.url | relative_url }}">
@@ -29,4 +31,5 @@
 <div itemprop="description">
   {{ post.excerpt }}
 </div>
+</article>
 {% endif %}
