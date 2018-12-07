@@ -4,6 +4,7 @@ title: "Practical ASP.NET Core: View Components"
 series: "Practical ASP.NET Core"
 series_subtitle: "View Components"
 date: 2018-11-10
+last_modified_at: 2018-12-02
 excerpt: Modularize all the things! New to ASP.NET Core, View Components are great for a modular approach in your MVC or Razor Pages website, but they aren't appropriate for every situation.
 description: New to ASP.NET Core, a View Component is a great tool for a modular approach in your MVC or Razor Pages website, but they aren't appropriate for every situation.
 tags: [csharp,ASP.NET Core,Practical ASP.NET Core,View Components]

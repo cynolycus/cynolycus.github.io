@@ -9,20 +9,24 @@
     {{ post.date | date: date_format }}
   </time>
   {% endif %}
-
   {% if post.series and include.hide_series != true %}
     • <span class="post-meta"> Series: <a href="/series/{{ post.series | slugify }}">{{ post.series }}</a></span>
   {% endif %}
-  <h3>
-    <a class="post-link" href="{{ post.url | relative_url }}">
+  <h1>
+    <a class="post-link" itemprop="url" href="{{ post.url | relative_url }}">
+      <span itemprop="name">
       {% if include.alt_title %}
       {{include.alt_title}}
       {% else %}
       {{ post.title | escape }}
       {% endif %}
+      </span>
     </a>
-  </h3>
+  </h1>
+  <meta itemprop="keywords" content="{{ post.tags | join: ',' }}" />
 </span>
 {% if site.show_excerpts and include.hide_excerpt != true %}
+<div itemprop="description">
   {{ post.excerpt }}
+</div>
 {% endif %}
