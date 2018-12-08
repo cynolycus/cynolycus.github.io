@@ -3,10 +3,14 @@
 {
    "@context":"http://schema.org",
    "@type":"BlogPosting",
+   "@id": "https://cynolyc.us{{ page.url }}",
+   "name":"{{ page.title | escape }}",
+   "headline":"{{ page.title | escape }}",
+   "keywords":"{{ page.tags | join: ',' }}",
    "wordCount":"{{ wordcount }}",
    "url":"https://cynolyc.us{{ page.url }}",
-   "datePublished":"{{ page.date | |date: '%Y-%m-%d' }}",
-   "dateModified":"{{ page.last_modified_at | date: '%Y-%m-%d' }}",
+   "datePublished":"{{ page.date | date_to_xmlschema }}",
+   "dateModified":"{{ page.last_modified_at | date_to_xmlschema}}",
    "author":{
       "@type":"Person",
       "name":"Benjamin Sochor",
@@ -15,18 +19,16 @@
         "https://github.com/cynolycus"]
    },
    "publisher":{
-     "@type":"Person",
-     "name":"{{ site.author }}",
+     "@type":"Organization",
+     "name":"cynolycus",
      "sameAs":[
        {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}", {%- endif -%}
        {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}
        "https://github.com/cynolycus"]
-    }
-   },
+    },
    "mainEntityOfPage":{
-      "@type":"WebPage",
+      "@type":"BlogPosting",
       "@id":"https://cynolyc.us{{ page.url }}"
-   },
-   "articleBody":"{{ page.content | strip_html | xml_escape | normalize_whitepace | strip_newlines | strip }}"
+   }
 }
 </script>

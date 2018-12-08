@@ -2,31 +2,21 @@
 layout: default
 ---
 
-<article class="post" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  <link itemprop="mainEntityOfPage" href="{{ post.url | relative_url }}" />
-  <meta itemprop="publisher" itemtype="http://schema.org/Organization" content="cynolyc.us" />
-  <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
-  <meta itemprop="description"
-        content="{{ page.description | truncatewords: 40 }}" />
+<article class="post">
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name">{{ page.title | escape }}</h1>
     {% if site.author %}
-      By <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="email" content="{{site.author_email}}"/>
-        <a class="p-author h-card" href="mailto:{{site.author_email}}"><span itemprop="name">{{ site.author }}</span></a>
-      </span>
+      By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a>
     {% endif %}
     <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         Created {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
       </time>
       {% if page.last_modified_at %}
-      • <time class="dt-published" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
+      • <time class="dt-published" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
         Updated {{ page.last_modified_at | date: date_format }}
       </time>
-      {% else %}
-      <meta itemprop="dateModified" content="{{ page.date | date_to_xmlschema }}" />
       {% endif %}
       {% if page.series %}
         <br/><span class="post-meta"> Series: <a href="/series/{{ page.series }}">{{ page.series }}</a></span>
@@ -38,13 +28,12 @@ layout: default
         <br/><small>{{ wordcount }} Words • {{ wordcount | divided_by:180 }} Mins.
       </p>
   </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
+  <section class="post-content e-content" itemprop="articleBody">
     {{ content }}
-  </div>
-
+  </section>
   {% include tags.html %}
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %}
+  {% include schema/blog-post.html %}
 </article>
