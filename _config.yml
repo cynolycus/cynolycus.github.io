@@ -28,6 +28,9 @@ header_pages:
   - series.md
 include:
   - .htaccess
+  - _pages
+  - _posts
+  - _series
 exclude:
   - Gemfile
   - Gemfile.lock
