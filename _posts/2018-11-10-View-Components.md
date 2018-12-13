@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Practical ASP.NET Core: View Components"
+title: "View Components and Partial Views in ASP.NET Core"
+category: Practical-ASP-NET-Core
 series: "Practical ASP.NET Core"
-series_subtitle: "View Components"
-date: 2018-11-10
-last_modified_at: 2018-12-02
+is_series: true
+date: 2018-12-01
+last_modified_at: 2018-12-12
 excerpt: Modularize all the things! New to ASP.NET Core, View Components are great for a modular approach in your MVC or Razor Pages website, but they aren't appropriate for every situation.
 description: New to ASP.NET Core, a View Component is a great tool for a modular approach in your MVC or Razor Pages website, but they aren't appropriate for every situation.
-tags: [csharp,ASP.NET Core,Practical ASP.NET Core,View Components]
+tags: [csharp, ASP.NET Core 2.1, View Components, Partial Views, MVC]
 applies_to: ASP.NET Core
 applies_to_vers: [1.0,1.1,2.0,2.1]
 ---
@@ -18,7 +19,7 @@ applies_to_vers: [1.0,1.1,2.0,2.1]
 {:toc}
 ---
 ## What are View Components?
-Introduced in ASP.NET Core, a View Component is essentially a partial View with business logic, or conversely a miniature Controller. Their versatility makes View Components a great tool for taking a modular approach in designing your ASP.NET Core application, but they aren't necessarily appropriate for every situation. If you've worked with MVC and partial Views before, View Components will seem familiar at best, or redundant at worst. They're very simple in principle, and very powerful if leveraged appropriately. 
+Introduced with the advent of ASP.NET Core, a View Component is essentially a partial View with business logic, or conversely a miniature Controller. Their versatility makes View Components a great tool for taking a modular approach in designing your MVC application, but they aren't necessarily appropriate for every situation. If you've worked with MVC and partial Views before .NET Core, View Components will seem familiar at best, or redundant at worst. They're very simple in principle, and very powerful if leveraged appropriately.
 ### What they are
 A View Component usually consists of two parts: a class which inherits from `ViewComponent`{:cs cl token} and contains some kind of logic, and an associated partial View. The latter isn't strictly required, but we will revisit that later in the article. Like a Partial View, View Components return a chunk of HTML, which is to say *just* its corresponding View.[^1] Like Controllers, they encapsulate potentially complex business logic, support constructor dependency injection, and are independently testable.
 ### What they *aren't*

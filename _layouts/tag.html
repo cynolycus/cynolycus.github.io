@@ -6,7 +6,7 @@ layout: default
 {{ site.series[pageTag]}}
   <ul class="post-list">
     {% for post in site.tags[pageTag] %}
-      {% include post-stub.html %}    
+      {% include post-excerpt-meta.html %}    
       <hr class="o-post__hr">
       {%- endfor -%}
     </ul>

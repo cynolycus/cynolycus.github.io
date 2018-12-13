@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-permalink: /about/
 description: Benjamin Sochor is a software engineer working in the healthcare industry, with expertise in SQL, C#, and ASP.NET Core. This site is a collection of lessons learned.
 ---
 >#### **Pardon The Mess!**

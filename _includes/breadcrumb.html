@@ -1,0 +1,22 @@
+{% capture url_parts %} {{ page.url | remove: "/index.html" | replace:'/'," " }}{% endcapture %}
+{% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
+{% assign previous="" %}
+<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<meta itemprop="position" content="1" />
+  <a href="/" itemprop="item"><span itemprop="name">home</span></a>
+  {% if num_parts == "0" or num_parts == "-1" %}
+    &nbsp;
+  </li>
+  {% else %}
+   &#187;
+{% for unused in page.content limit:num_parts %}
+{% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
+{% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+  <meta itemprop="position" content="{{ forloop.index | plus:1}}" />
+  <a href="{{previous}}" itemprop="item"><span itemprop="name">{{ first_word }}</span></a> &#187; </li>
+{% capture url_parts %}{{ url_parts | remove_first:first_word }}{% endcapture %}
+{% endfor %}
+{% endif %}
+</ol>

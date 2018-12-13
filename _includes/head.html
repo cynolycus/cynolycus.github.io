@@ -18,11 +18,16 @@
         {{ site.title_sep }}
         {{ site.tagline }}
     {% endif %}</title>
-    <link rel="canonical" href="https://cynolyc.us/">
+  <link rel="canonical" href="https://cynolyc.us{{page.url | relative_url}}">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  {%- feed_meta -%}
+  {% feed_meta %}
     {%- include analytics.html -%}
     {% if site.tags != "" %}
       {% include dogtags.html %}
+    {% endif %}
+    {% if page.layout == "post" %}
+      {% include schema/blog-post.html %}
+    {% else if page.layout == "index" %}
+      {% include schema/blog.html %}
     {% endif %}
 </head>

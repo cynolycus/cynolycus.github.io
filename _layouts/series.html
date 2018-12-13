@@ -9,12 +9,12 @@ layout: default
 
   {{ content }}
 
-  {% assign seriesPosts = site.posts | where:"series",page.title %}
+  {% assign seriesPosts = site.categories[page.slug] %}
   {% if seriesPosts.size > 0 %}
       <ul class="post-list">
-      {%- for post in seriesPosts -%}
+      {% for post in seriesPosts %}
       <li>
-        {% include post-stub.html hide_series=true alt_title=post.series_subtitle %}
+        {% include post-excerpt-meta.html hide_series=true alt_title=post.series_subtitle %}
       </li>
       <hr class="o-post__hr"/>
       {%- endfor -%}

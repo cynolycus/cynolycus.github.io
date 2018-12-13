@@ -1,0 +1,24 @@
+{% capture max_mod_date %}{{0 | date: %s}}{% endcapture %}
+{% for post in site.posts %}
+  {% capture post_date %}{{post.date | date: '%s'}}{% endcapture %}
+  {% capture post_updated %}{{post.last_modified_at | date: '%s'}}{% endcapture %}
+    {% if post_updated > max_mod_date %}
+      {% assign max_mod_date = post_updated %}
+    {% endif %}
+    {% if post_date > max_mod_date %}
+      {% assign max_mod_date = post_date %}
+    {% endif %}
+{% endfor %}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "name": "{{site.title }}",
+    "url": "{{ site.url }}",
+    "description": "{{site.description }}",
+    "dateModified":"{{ max_mod_date | date: '%Y-%m-%d' }}",
+    "mainEntity":{
+      {% include schema/post-list.html posts=site.posts %}
+     }
+ }
+ </script>

@@ -1,16 +1,18 @@
 {% assign wordcount = page.content | number_of_words %}
+
 <script type="application/ld+json">
 {
    "@context":"http://schema.org",
    "@type":"BlogPosting",
    "@id": "https://cynolyc.us{{ page.url }}",
+   "articleBody": {{ page.content | strip_html | jsonify }}
    "name":"{{ page.title | escape }}",
    "headline":"{{ page.title | escape }}",
    "keywords":"{{ page.tags | join: ',' }}",
    "wordCount":"{{ wordcount }}",
    "url":"https://cynolyc.us{{ page.url }}",
-   "datePublished":"{{ page.date | date_to_xmlschema }}",
-   "dateModified":"{{ page.last_modified_at | date_to_xmlschema}}",
+   "datePublished":"{{ page.date | date: '%Y-%m-%d'  }}",
+   "dateModified":"{{ page.last_modified_at | date: '%Y-%m-%d' }}",
    "author":{
       "@type":"Person",
       "name":"Benjamin Sochor",

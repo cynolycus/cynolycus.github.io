@@ -1,6 +1,5 @@
 <div class="c-tags">
   {% for tag in page.tags %}
-      {% capture tag_name %}{{ tag }}{% endcapture %}
-      <a class="c-tag" href="/tag/{{ tag_name }}"><nobr>{{ tag_name }}</nobr></a>
+      <a class="c-tag" href="/tag/{{ tag }}"><nobr>{{ tag }}</nobr></a>
     {% endfor %}
 </div>
