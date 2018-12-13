@@ -7,7 +7,7 @@
         "name":{{ post.title | escape | jsonify }},
         "headline": {{ post.title | escape | jsonify }},
         "description": {{ post.description | strip_html | jsonify }},
-        "keywords":{{ post.tags | escape | join: ',' | jsonify }},
+        "keywords":{{ post.tags  | join: ',' | escape | jsonify }},
         "wordCount":"{{ wordcount }}",
         "url":"https://cynolyc.us{{ post.url }}",
         "datePublished":{{ post.date | date: '%Y-%m-%d'  | jsonify }},

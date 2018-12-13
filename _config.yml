@@ -19,7 +19,7 @@ collections:
     permalink: /blog/:categories/:title
   series:
     output: true
-    permalink: /series/:title
+    permalink: /series/:path
 #Files
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"

@@ -8,7 +8,7 @@
    "articleBody": {{ page.content | strip_html | jsonify }}
    "name":"{{ page.title | escape }}",
    "headline":"{{ page.title | escape }}",
-   "keywords":"{{ page.tags | join: ',' }}",
+   "keywords":"{{ page.tags | join: ',' | escape }}",
    "wordCount":"{{ wordcount }}",
    "url":"https://cynolyc.us{{ page.url }}",
    "datePublished":"{{ page.date | date: '%Y-%m-%d'  }}",
