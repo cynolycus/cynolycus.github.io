@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="home">
+  {{ content }}
+  {% if site.posts.size > 0 %}
+    <h2 class="post-list-heading">Posts</h2>
+    <hr class="o-post__hr"/>
+    <ul class="post-list">
+      {% for post in site.posts %}
+      <li>
+        {% include post/excerpt-meta.html %}
+      </li>
+      <hr class="o-post__hr"/>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

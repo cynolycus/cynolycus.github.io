@@ -12,9 +12,12 @@
   </h1>
   <span class="post-meta">
     {% if site.author %}
-      By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a><br/>
+      By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a>
     {% endif %}
-        <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
+    {% if post.is_series and include.hide_series != true %}
+       • <span>Series: <a href="/series/{{ post.category }}">{{ post.series }}</a></span>
+    {% endif %}
+      <br/><time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
           Created {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
           {{ post.date | date: date_format }}
         </time>
@@ -23,16 +26,6 @@
           Updated {{ post.last_modified_at | date: date_format }}
         </time>
         {% endif %}
-        {% if post.is_series and include.hide_series != true %}
-          • <span>Series: <a href="/series/{{ post.category }}">{{ post.series }}</a></span>
-        {% endif %}
-        {% if post.applies_to %}
-          <br/><span>Applies to {{post.applies_to}} version(s): {{post.applies_to_vers | join:", "}}</span>
-        {% endif %}
-        {% assign wordcount = post.content | number_of_words %}
-          <br/><small>{{ wordcount }} Words • {{ wordcount | divided_by:180 }} Mins.
-
-
 </span>
 {% if site.show_excerpts and include.hide_excerpt != true %}
 <div>

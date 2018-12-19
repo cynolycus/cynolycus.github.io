@@ -2,6 +2,9 @@
   By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a>
 {% endif %}
 <p class="post-meta">
+  {% if page.is_series %}
+    <span class="post-meta">Series: <a href="/series/{{ page.category }}">{{ page.series }}</a></span><br/>
+  {% endif %}
   <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
     Created {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
     {{ page.date | date: date_format }}
@@ -10,9 +13,6 @@
   • <time class="dt-published" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
     Updated {{ page.last_modified_at | date: date_format }}
   </time>
-  {% endif %}
-  {% if page.is_series %}
-    <br/><span class="post-meta">Series: <a href="/series/{{ page.category }}">{{ page.series }}</a></span>
   {% endif %}
   {% if page.applies_to %}
     <br/><span>Applies to {{page.applies_to}} version(s): {{page.applies_to_vers | join:", "}}</span>

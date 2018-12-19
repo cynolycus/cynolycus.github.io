@@ -11,3 +11,6 @@
     background-color: lighten($baseColor,40%);
   }
 }
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.5,0,.075,1)) {
+  transition: $property $duration $ease;
+}

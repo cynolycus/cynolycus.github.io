@@ -1,10 +1,10 @@
 
 {:ic: .o-code}
-  {:token: .o-code .o-code--token}
-  {:ph: .o-code .o-code__ph}
+{:token: .o-code .o-code--token}
+{:ph: .o-code .o-code__ph}
 
-  {:cs: .o-code .o-code--csharp}
-  {:razor: .o-code .o-code--razor}
+{:cs: .o-code .o-code--csharp}
+{:razor: .o-code .o-code--razor}
 
 {:g: .o-code__g}
 {:m: .o-code__m}

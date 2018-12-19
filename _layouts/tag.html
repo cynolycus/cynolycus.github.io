@@ -1,12 +1,19 @@
 ---
 layout: default
 ---
-<h1>Filed Under <small>#{{ page.tag }}</small></h1>
-{%  assign pageTag = page.tag.first | default: page.tag %}
-{{ site.series[pageTag]}}
+{% assign posts = site.posts | where: "tags",page.tag %}
+<h1>{{posts.size}} posts filed under <small>#{{ page.tag }}</small></h1>
+
+
+{% if page.similar_tags %}
+<div>See also: {% include tags.html similar_tags=page.similar_tags %}</div>
+{% endif %}
+{{page.content}}
+{% if posts.size > 0 %}
   <ul class="post-list">
-    {% for post in site.tags[pageTag] %}
-      {% include post-excerpt-meta.html %}    
+    {% for post in posts %}
+      {% include post/excerpt-meta.html %}
       <hr class="o-post__hr">
       {%- endfor -%}
     </ul>
+{% endif %}

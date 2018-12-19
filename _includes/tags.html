@@ -1,5 +1,9 @@
+{% assign page_tags = page.tags %}
+{% if include.similar_tags.size > 0 %}
+  {% assign page_tags = include.similar_tags %}
+{% endif %}
 <div class="c-tags">
-  {% for tag in page.tags %}
-      <a class="c-tag" href="/tag/{{ tag }}"><nobr>{{ tag }}</nobr></a>
+  {% for tag in page_tags %}
+      <a class="c-tag" href="/tag/{{ tag | slugify }}"><nobr>{{ tag }}</nobr></a>
     {% endfor %}
 </div>

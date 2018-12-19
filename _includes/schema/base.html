@@ -1,0 +1,8 @@
+{% assign structured_data = "schema/" | append: page.schema | append: ".md" %}
+{% if page.schema %}
+  <script type="application/ld+json">
+  {
+    {% include {{structured_data}} %}
+  }
+  </script>
+{% endif %}

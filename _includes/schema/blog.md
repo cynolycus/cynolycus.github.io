@@ -9,16 +9,11 @@
       {% assign max_mod_date = post_date %}
     {% endif %}
 {% endfor %}
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Blog",
-    "name": "{{site.title }}",
-    "url": "{{ site.url }}",
-    "description": "{{site.description }}",
-    "dateModified":"{{ max_mod_date | date: '%Y-%m-%d' }}",
-    "mainEntity":{
-      {% include schema/post-list.html posts=site.posts %}
-     }
- }
- </script>
+"@context": "http://schema.org",
+"@type": "Blog",
+"name": "{{ site.title }}",
+"url": "{{ site.url }}{{ page.url }}",
+"description": "{{ site.description }}",
+"datePublished": "2018-12-01",
+"dateModified":"{{ max_mod_date | date: '%Y-%m-%d' }}",
+"mainEntity":{ {% include schema/post-list.md posts=site.posts %} }

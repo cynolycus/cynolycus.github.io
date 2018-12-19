@@ -20,6 +20,21 @@ collections:
   series:
     output: true
     permalink: /series/:path
+  tags:
+    output: true
+    permalink: /tag/:title
+defaults:
+- scope:
+    path: ""
+    type: "posts"
+  values:
+    layout: "post"
+    schema: "blogPosting"
+- scope:
+    path: ""
+    type: "tags"
+  values:
+    layout: "tag"
 #Files
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
@@ -37,8 +52,6 @@ keep_files:
 
 # Build settings
 markdown: kramdown
-kramdown:
-  parse_block_html: true
 theme: minima
 show_excerpts: true
 wpm: 200

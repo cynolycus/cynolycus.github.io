@@ -3,10 +3,21 @@
  "functions",
  "mixins",
  "objects/code",
+ "objects/buttons",
  "components/tags",
  "breadcrumb";
 
 
+ .jumbotron {
+     border-color: $brand-color;
+     text-align: center;
+     overflow: hidden;
+     color: $brand-color;
+     padding: 5px;
+     .page-heading {
+       margin:0;
+     }
+ }
 code {
   font-family: -moz-fixed;
   font-size: 15px;

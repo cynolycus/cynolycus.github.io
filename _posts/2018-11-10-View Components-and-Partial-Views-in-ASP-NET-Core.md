@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "View Components and Partial Views in ASP.NET Core"
 category: Practical-ASP-NET-Core
 series: "Practical ASP.NET Core"
@@ -8,11 +7,10 @@ date: 2018-12-01
 last_modified_at: 2018-12-12
 excerpt: Modularize all the things! New to ASP.NET Core, View Components are great for a modular approach in your MVC or Razor Pages website, but they aren't appropriate for every situation.
 description: New to ASP.NET Core, a View Component is a great tool for a modular approach in your MVC or Razor Pages website, but they aren't appropriate for every situation.
-tags: [csharp, ASP.NET Core 2.1, View Components, Partial Views, MVC]
+tags: [CSharp, ASP.NET Core,Partial Views, Razor Pages, View Components, Partial Views, MVC]
 applies_to: ASP.NET Core
 applies_to_vers: [1.0,1.1,2.0,2.1]
 ---
-
 {% include kramdown/ALDs.md %}
 ---
 * TOC

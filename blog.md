@@ -1,3 +1,5 @@
 ---
-layout: index
+layout: blog
+schema: blog
+title: Blog
 ---
