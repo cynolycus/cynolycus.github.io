@@ -26,8 +26,7 @@
             {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}", {%- endif -%}
             {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}
             "https://github.com/cynolycus"]
-         },
-          "articleBody": {{ post.content | strip_html | jsonify }}
+         }
         }
       {%- if forloop.last == false  -%},{% endif %}
       {% endfor %}
