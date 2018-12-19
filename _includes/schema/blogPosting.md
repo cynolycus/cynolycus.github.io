@@ -1,7 +1,7 @@
  "@context":"http://schema.org",
  "@type":"BlogPosting",
  "@id": "https://cynolyc.us{{ page.url }}",
- "articleBody": {{ page.content | strip_html | jsonify }}
+ "articleBody": {{ page.content | strip_html | jsonify }},
  "name":"{{ page.title | escape }}",
  "headline":"{{ page.title | escape }}",
  "keywords":"{{ page.tags | join: ',' | escape }}",
@@ -13,8 +13,8 @@
     "@type":"Person",
     "name":"Benjamin Sochor",
     "sameAs":[
-      "https://twitter.com/cynolycus",
-      "https://github.com/cynolycus"]
+    {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
+    {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}  ]
  },
  "publisher":{
    "@type":"Organization",
