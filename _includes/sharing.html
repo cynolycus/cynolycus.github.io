@@ -1,32 +1,32 @@
 <div class="c-social c-social--sharing">
     <ul>
         <li class="c-social__icon c-social__icon--rd">
-            <a href="https://www.reddit.com/submit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | url_encode}}&title={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
+            <a class="js-social__share" data-socialNetwork="Reddit" href="https://www.reddit.com/submit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | url_encode}}&title={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
                 {% include svg/social/icon-reddit.svg %}
             </a>
         </li>
         <li class="c-social__icon c-social__icon--hn">
-            <a href="https://news.ycombinator.com/submitlink?u={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | url_encode}}&t={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
+            <a class="js-social__share" data-socialNetwork="HackerNews" href="https://news.ycombinator.com/submitlink?u={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | url_encode}}&t={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
                 {% include svg/social/icon-hackernews.svg %}
             </a>
         </li>
         <li class="c-social__icon c-social__icon--tw">
-            <a href="https://twitter.com/intent/tweet?via={{ site.twitter_username }}&url={{ site.url }}{{ page.url | replace:'index.html','' | url_encode}}&text={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
+            <a class="js-social__share" data-socialNetwork="Twitter" href="https://twitter.com/intent/tweet?via={{ site.twitter_username }}&url={{ site.url }}{{ page.url | replace:'index.html','' | url_encode}}&text={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
                 {% include svg/social/icon-twitter.svg %}
             </a>
         </li>
         <li class="c-social__icon c-social__icon--fb">
-            <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url | replace:'index.html','' | url_encode }}&t={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
+            <a class="js-social__share" data-socialNetwork="Facebook" href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url | replace:'index.html','' | url_encode }}&t={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
                 {% include svg/social/icon-fb.svg %}
             </a>
         </li>
         <li class="c-social__icon c-social__icon--gp">
-            <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url | replace:'index.html','' | url_encode}}" target="_blank">
+            <a class="js-social__share" data-socialNetwork="GooglePlus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url | replace:'index.html','' | url_encode}}" target="_blank">
                 {% include svg/social/icon-googleplus.svg %}
             </a>
         </li>
         <li class="c-social__icon c-social__icon--ln">
-            <a href="https://www.linkedin.com/shareArticle?url={{ site.twitter_username }}&url={{site.url}}{{ page.url | replace:'index.html','' | url_encode}}&title={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
+            <a class="js-social__share" href="https://www.linkedin.com/shareArticle?url={{ site.twitter_username }}&url={{site.url}}{{ page.url | replace:'index.html','' | url_encode}}&title={{ page.title | append: site.title_sep | append: site.title | url_encode}}" target="_blank">
                 {% include svg/social/icon-linkedin.svg %}
             </a>
         </li>
