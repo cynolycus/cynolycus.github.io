@@ -35,6 +35,10 @@ defaults:
     type: "tags"
   values:
     layout: "tag"
+- scope:
+    path: "assets/img"
+  values:
+    image: true
 #Files
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
@@ -57,6 +61,7 @@ show_excerpts: true
 wpm: 200
 #Sass
 sass:
+    style: compressed
     sass_dir: _scss
 #Plug-ins
 plugins:
