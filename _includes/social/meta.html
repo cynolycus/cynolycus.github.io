@@ -1,3 +1,4 @@
+{% assign image_fallback =  site.url | append: "/assets/img/default.png" %}
 {% assign images = site.static_files | where: "image", true %}
 {% for image in images %}
   {% assign image_name = image.basename | slugify | downcase %}
@@ -22,7 +23,7 @@
 <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 {% else %}
 <meta name="twitter:card"  content="summary">
-<meta name="twitter:image" content="{{ site.url | append: "/assets/img/default.png" }}>
+<meta name="twitter:image" content="{{ image_fallback }}">
 <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 {% endif %}
 <meta name="twitter:site"    content="@{{ site.twitter_username }}">
@@ -39,12 +40,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 {%if page_image %}
-  <meta property="og:image" content="{{ page_image}}" />
+<meta property="og:image" content="{{ page_image}}" />
+{% else %}
+<meta property="og:image" content="{{ image_fallback }}"/>
 {%endif %}
 <meta property="og:description" content="{{ page.description | default: site.description }}" />
 <meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:locale" content="en-US" />
-
 {%if page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
 {%endif %}
