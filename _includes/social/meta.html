@@ -1,6 +1,8 @@
 {% assign images = site.static_files | where: "image", true %}
-{% for image in images %}  
-  {% if image.basename | slugify | downcase == page.title | slugify | downcase %}
+{% for image in images %}
+  {% assign image_name = image.basename | slugify | downcase %}
+  {% assign page_name = page.title | slugify | downcase %}
+  {% if image_name == page_name %}
     {% assign page_image = site.url | append: image.path %}
   {% endif %}
 {% endfor %}
