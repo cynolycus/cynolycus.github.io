@@ -2,7 +2,7 @@
 title: "View Components and Partial Views in ASP.NET Core"
 category: Practical-ASP-NET-Core
 order: 1
-date: 2018-12-01 00:00:00
+date: 2018-12-01T00:00:00-5:00
 last_modified_at: 2018-12-22
 excerpt: Modularize all the things! New to ASP.NET Core, View Components are a great tool for modularizing your MVC or Razor Pages site and empowering your Partial Views.
 description: New to ASP.NET Core, View Components are a great tool for modularizing your MVC or Razor Pages site and empowering your Partial Views.

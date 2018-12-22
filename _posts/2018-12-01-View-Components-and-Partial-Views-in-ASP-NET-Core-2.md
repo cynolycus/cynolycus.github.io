@@ -2,7 +2,7 @@
 title: "View Components and Partial Views in ASP.NET Core: Constructing View Components"
 category: Practical-ASP-NET-Core
 order: 2
-date: 2018-12-01 00:01:00
+date: 2018-12-01T00:01:00-5:00
 last_modified_at: 2018-12-22
 excerpt: Here we'll touch on how to create a simple View Component and return a Partial View (or not!)
 description: Here we'll touch on how to create a simple View Component and return a Partial View (or not!)
