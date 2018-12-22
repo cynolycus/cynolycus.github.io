@@ -8,6 +8,7 @@ url: https://cynolyc.us
 repository: https://github.com/cynolycus/cynolycus.github.io
 author: "Ben Sochor"
 author_email: "bmsochor@gmail.com"
+author_logo: "cynolycus-avatar_oil--tw.png"
 google_analytics: UA-110479654-1
 github_username:  cynolycus
 twitter_username: cynolycus
@@ -44,7 +45,7 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 header_pages:
   - blog.md
-  - series.md  
+  - series.md
   - about.md
 include:
   - .htaccess
