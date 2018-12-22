@@ -22,7 +22,7 @@
    "sameAs":[
      {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
      {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}
-     "https://github.com/cynolycus"]
+     "https://github.com/cynolycus"],
      "logo": {
             "@type": "ImageObject",
             "name": "cynolycusAvatar",
