@@ -10,26 +10,27 @@
       </span>
     </a>
   </h1>
+  
+  {% if site.author %}
+    <h3>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a><br/></h3>
+  {% endif %}
+
   <span class="post-meta">
-    {% if site.author %}
-      By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a>
+    {% unless include.hide_series %}
+      {% include post/components/series.html %}<br/>
+    {% endunless %}
+
+    {% include post/components/date.html text="Published" date=post.date %}
+
+    {% if post.last_modified_at %}
+    • {% include post/components/date.html text="Updated" date=post.last_modified_at %}
     {% endif %}
-    {% if post.is_series and include.hide_series != true %}
-       • <span>Series: <a href="/series/{{ post.category }}">{{ post.series }}</a></span>
-    {% endif %}
-      <br/><time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
-          Created {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-          {{ post.date | date: date_format }}
-        </time>
-        {% if post.last_modified_at %}
-        • <time class="dt-published" datetime="{{ post.last_modified_at | date_to_xmlschema }}">
-          Updated {{ post.last_modified_at | date: date_format }}
-        </time>
-        {% endif %}
 </span>
-{% if site.show_excerpts and include.hide_excerpt != true %}
-<div>
-  {{ post.excerpt }}
-</div>
-</article>
+{% if site.show_excerpts %}
+  {% unless include.hide_excerpt %}
+  <div>
+    {{ post.excerpt }}
+  </div>
+  {% endunless %}
 {% endif %}
+</article>
