@@ -44,8 +44,8 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 header_pages:
   - blog.md
+  - series.md  
   - about.md
-  - series.md
 include:
   - .htaccess
 exclude:
