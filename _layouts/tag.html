@@ -3,8 +3,6 @@ layout: default
 ---
 {% assign posts = site.posts | where: "tags",page.tag %}
 <h1>{{posts.size}} posts filed under <small>#{{ page.tag }}</small></h1>
-
-
 {% if page.similar_tags %}
 <div>See also: {% include tags.html similar_tags=page.similar_tags %}</div>
 {% endif %}
