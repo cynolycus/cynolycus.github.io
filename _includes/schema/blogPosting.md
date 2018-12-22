@@ -23,6 +23,13 @@
      {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
      {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}
      "https://github.com/cynolycus"]
+     "logo": {
+            "@type": "ImageObject",
+            "name": "cynolycusAvatar",
+            "width": "128",
+            "height": "128",
+            "url": "{{site.url}}/assets/img/{{site.author_logo}}"
+        }
   },
  "mainEntityOfPage":{
     "@type":"BlogPosting",
