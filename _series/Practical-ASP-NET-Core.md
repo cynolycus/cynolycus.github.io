@@ -1,6 +1,7 @@
 ---
 layout: series
 title: Practical ASP.NET Core
+category: Practical-ASP-NET-Core
 date: 2018-11-09
 excerpt: A series on lessons learned about Microsoft's ASP.NET Core framework.
 description: A series on lessons learned about Microsoft's ASP.NET Core framework.
