@@ -2,14 +2,14 @@
   layout: default
   title: Privacy Policy
 ---
+# PRIVACY POLICY {#policy}
+
+This Privacy Policy (the "Policy") describes how your personal information is collected, used, and shared when you visit or make a purchase from [{{site.url}}]({{site.url}}) (the “Site”). This Policy applies to all services operated by the Site.
 
 ---
 * TOC
 {:toc}
 ---
-# Privacy Policy
-
-This Privacy Policy (the "Policy") describes how your personal information is collected, used, and shared when you visit or make a purchase from [{{site.url}}]({{site.url}}) (the “Site”). This Policy applies to all services operated by the Site.
 
 ## PERSONAL INFORMATION WE COLLECT
 
