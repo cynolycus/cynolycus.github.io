@@ -11,9 +11,7 @@
       </div>
       <div class="footer-col footer-col-3">
         <ul class="contact-list">
-            {%- if site.author_email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.author_email }}</a></li>
-            {%- endif -%}
+          <li><a href="{{site.url | append: "/privacy" }}">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
