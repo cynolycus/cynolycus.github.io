@@ -3,6 +3,10 @@
   title: Privacy Policy
 ---
 
+---
+* TOC
+{:toc}
+---
 # Privacy Policy
 
 This Privacy Policy (the "Policy") describes how your personal information is collected, used, and shared when you visit or make a purchase from [{{site.url}}]({{site.url}}) (the “Site”). This Policy applies to all services operated by the Site.
@@ -20,7 +24,7 @@ Additionally when you make a purchase or attempt to make a purchase through the 
 
 When we talk about “Personal Information” in this Privacy Policy, we are talking both about Device Information and Order Information.
 
-## HOW DO WE USE YOUR PERSONAL INFORMATION?
+### HOW DO WE USE YOUR PERSONAL INFORMATION?
 
 We use the Order Information that we collect generally to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations).  Additionally, we use this Order Information to:
 
@@ -30,15 +34,15 @@ We use the Order Information that we collect generally to fulfill any orders pla
 
 We use the Device Information that we collect to help us screen for potential risk and fraud (in particular, your IP address), and more generally to improve and optimize our Site (for example, by generating analytics about how our customers browse and interact with the Site, and to assess the success of our marketing and advertising campaigns).
 
-## SHARING YOUR PERSONAL INFORMATION
+### SHARING YOUR PERSONAL INFORMATION
 
 We share your Personal Information with third parties to help us use your Personal Information, as described above.  For example, we use Google Analytics to help us understand how our customers use the Site--you can read more about how Google uses your Personal Information [here](https://www.google.com/intl/en/policies/privacy/).  You can also opt-out of Google Analytics [here](https://tools.google.com/dlpage/gaoptout).
 
-We also use Twitter’s Conversion Tracking product. By using the Site, you are permitting Twitter to collect non-identifying data for analytics purposes. We may use this data to improve upon our services and better understand our audience. This data is only used to understand our user base and to assess features and potential advertising content to enhance the Site experience and content for our visitors. At no point in time is your personal information tied to this analytics data by Twitter. For information about how you can opt out of this program, including through the Do Not Track functionality in your web browser, please visit Twitter's [Help Center]("https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"). 
+We also use Twitter’s Conversion Tracking product. By using the Site, you are permitting Twitter to collect non-identifying data for analytics purposes. We may use this data to improve upon our services and better understand our audience. This data is only used to understand our user base and to assess features and potential advertising content to enhance the Site experience and content for our visitors. At no point in time is your personal information tied to this analytics data by Twitter. For information about how you can opt out of this program, including through the Do Not Track functionality in your web browser, please visit Twitter's [Help Center]("https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads").
 
 We may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
 
-## BEHAVIORAL ADVERTISING
+### BEHAVIORAL ADVERTISING
 As described above, we use your Personal Information to improve our Site, and may use that information to provide you with targeted advertisements or marketing communications we believe may be of interest to you.  For more information about how targeted advertising works, you can visit the Network Advertising Initiative’s (“NAI”) educational page [here](http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work).
 
 The following resources will allow you to opt-out of targeted advertising:
