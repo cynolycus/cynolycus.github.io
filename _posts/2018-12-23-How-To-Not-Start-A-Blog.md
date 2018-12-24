@@ -3,6 +3,7 @@ title: "How To (Not) Start A Successful Blog: Part 1"
 category: blogging
 excerpt: "Here's some mistakes I've made in the first 30 days of starting this blog/hot mess, and how you can avoid them."
 description: "Here's some mistakes I've made in the first 30 days of starting this blog/hot mess, and how you can avoid them."
+tags: [Blog, SEO, Self]
 ---
 
 I'll wager that if you're reading this, you're somewhere on the spectrum between *wanting to make something awesome and not knowing where to start*, and *staring in horror at the dumpster fire you've created, questioning where it all went terribly wrong*. Or maybe you already have a successful blog and just want some entertainment. Either way, let's have an honest conversation about self-sabotage involved with getting a blog off the ground and how to break through them.
@@ -27,7 +28,7 @@ On one screen, a blank page. On the other, a dozen tabs of endless Google search
 
 Does this sound like you? If so, stop it, **right now**. Close those tabs (even this one!) and start writing: you're not allowed back until you've hit your word count [goal](#goals) for the day. Yes, it'll suck. Yes, there's competition out there who've done it better. But you're spinning your gears on the fine-tuning of an article that doesn't even exist yet.
 
-That's been me for the past month, as evidenced by the one whole article (now two!) I've successfully published in that timeframe. I'd convinced myself that everything had to be *just right*, or else I'd somehow be getting off on the wrong foot. Well, great news for you who haven't yet started: nobody cares about your first steps. You aren't going to hit Google's front page overnight with a single piece of content (if you have, let me in on your secret!), and nobody is waiting with bated breath to tear apart your baby-steps.
+That's been me for the past month, as evidenced by the [one whole article]({% post_url 2018-12-01-View-Components-and-Partial-Views-in-ASP-NET-Core %}) (now two!) I've successfully published in that timeframe. I'd convinced myself that everything had to be *just right*, or else I'd somehow be getting off on the wrong foot. Well, great news for you who haven't yet started: nobody cares about your first steps. You aren't going to hit Google's front page overnight with a single piece of content (if you have, let me in on your secret!), and nobody is waiting with bated breath to tear apart your baby-steps.
 
 I muddled through learning the basics of everything I thought I needed to know about on-site and off-site SEO, audience research, and so forth. Meanwhile, I've had more pageviews in *one day* from a single off-hand tweet, than all organic traffic combined in the past 30 days. Get yourself out there and *then* agonize over the the details that really make your work shine.
 
