@@ -23,7 +23,7 @@ collections:
     permalink: /series/:path
   tags:
     output: true
-    permalink: /tag/:title
+    permalink: /tag/:slug
 defaults:
 - scope:
     path: ""
