@@ -10,27 +10,23 @@
       </span>
     </a>
   </h1>
-  
   {% if site.author %}
-    <h3>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a><br/></h3>
+    <span>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a></span>
   {% endif %}
-
-  <span class="post-meta">
-    {% unless include.hide_series %}
-      {% include post/components/series.html %}<br/>
-    {% endunless %}
-
-    {% include post/components/date.html text="Published" date=post.date %}
-
+  <p class="post-meta">
+    {%- unless include.hide_series -%}
+      {% include post/components/series.html %}
+    {%- endunless -%}
+    {%- include post/components/date.html text="Published" date=post.date -%}
     {% if post.last_modified_at %}
     • {% include post/components/date.html text="Updated" date=post.last_modified_at %}
     {% endif %}
-</span>
+</p>
 {% if site.show_excerpts %}
   {% unless include.hide_excerpt %}
-  <div>
+  <p>
     {{ post.excerpt }}
-  </div>
+  </p>
   {% endunless %}
 {% endif %}
 </article>
