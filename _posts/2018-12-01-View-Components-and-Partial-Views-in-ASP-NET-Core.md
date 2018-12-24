@@ -8,7 +8,7 @@ excerpt: Modularize all the things! New to ASP.NET Core, View Components are a g
 description: New to ASP.NET Core, View Components are a great tool for modularizing your MVC or Razor Pages site and empowering your Partial Views.
 applies_to: ASP.NET Core
 applies_to_vers: [1.0,1.1,2.0,2.1]
-tags: [CSharp, ASP.NET Core,Partial Views, Razor Pages, View Components, MVC]
+tags: [CSharp, ASP.NET Core, Partial Views, Razor Pages, View Components, MVC]
 
 ---
 {% include kramdown/ALDs.md %}
