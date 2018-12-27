@@ -17,10 +17,10 @@ layout: compress
             <h1 class="page-heading">Welcome to {{ site.title }}</h1>
             <p>{{ site.description }}</p>
             <hr class="o-post__hr"/>
-            <div>
-            {% include button/roller.html text="Blog" link="blog" %}
-            {% include button/roller.html text="About" link="about" %}
-            {% include button/roller.html text="Series" link="series" %}
+            <div class="c-splash">
+              {% include button/roller.html text="Blog" link="blog" %}
+              {% include button/roller.html text="About" link="about" %}
+              {% include button/roller.html text="Series" link="series" %}
             </div>
           </div>
           {{ content }}
