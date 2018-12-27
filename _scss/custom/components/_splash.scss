@@ -1,5 +1,9 @@
 .c-splash {
   &__item {
-
+  }
+}
+@include media-query($on-palm) {
+  .c-splash__item {
+    display:block;
   }
 }

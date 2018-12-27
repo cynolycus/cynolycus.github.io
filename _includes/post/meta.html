@@ -1,11 +1,12 @@
-{% include sharing.html %}
 {% unless post %}
   {% assign post = page %}
 {% endunless %}
+
 {% include avatar.html %}
 {% if site.author %}
   <h3>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a></h3>
 {% endif %}
+{% include sharing.html %}
 <p class="post-meta">
   {% unless include.hide_series %}
     {% include post/components/series.html %}

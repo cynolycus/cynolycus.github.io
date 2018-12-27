@@ -1,20 +1,6 @@
-{% assign image_fallback =  site.url | append: "/assets/img/default.png" %}
-{% assign images = site.static_files | where: "image", true %}
-{% for image in images %}
-  {% assign image_name = image.basename | slugify | downcase %}
-  {% assign page_name = page.slug  | downcase %}
-  {% if image_name == page_name %}
-    {% assign page_image = site.url | append: image.path %}
-  {% endif %}
-{% endfor %}
+{% capture page_image %}{% include post/image.md %}{% endcapture %}
 {% capture page_title %}
-{% if page.title and page.title != "none" %}
-    {{ page.title }}
-  {% else %}
-      {{ site.title }}
-      {{ site.title_sep }}
-      {{ site.tagline }}
-  {% endif %}
+  {% include {{layout.title_include | default:"title" | append: ".md"}} %}
 {% endcapture %}
 <!-- Twitter cards -->
 {% if page_image %}
