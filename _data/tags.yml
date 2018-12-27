@@ -1,0 +1,6 @@
+#Tag display overrides
+# FORMAT
+#  Tag: Displayname
+# USAGE
+#   {{ site.data.tags[page.tag] | default: page.tag }}
+CSharp: "C#"
