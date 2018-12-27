@@ -1,10 +1,18 @@
 ---
 layout: default
+title_include: tag-title
 ---
+{% assign other_tags = "" | split: "," %}
+{% for tag_array in site.data.tag-hive %}
+  {% if tag_array contains page.tag %}
+    {% assign other_tags = other_tags | concat: tag_array %}
+  {% endif %}
+{% endfor %}
+{% assign other_tags = other_tags | uniq %}
 {% assign posts = site.posts | where: "tags",page.tag %}
-<h1>{{posts.size}} posts filed under <small>#{{ page.tag }}</small></h1>
-{% if page.similar_tags %}
-<div>See also: {% include tags.html similar_tags=page.similar_tags %}</div>
+<h1>{{posts.size}} posts filed under <small>{{ site.data.tags[page.tag] | default: page.tag }}</small></h1>
+{% if other_tags.size > 0 %}
+<div>See also: {% include tags.html similar_tags=other_tags %}</div>
 {% endif %}
 {{page.content}}
 {% if posts.size > 0 %}
