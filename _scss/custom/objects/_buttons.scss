@@ -10,6 +10,34 @@
   padding: 0;
   font-size: inherit;
   font-family: inherit;
+
+&--ripple {
+  width: 8rem;
+  height: auto;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 8px;
+  margin: 6px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: #2196f3;
+  box-shadow: 0 0 4px #999;
+  outline: none;
+  background-position: center;
+  transition: background 0.3s;
+  background-color: $brand-color;
+  &:hover {
+    background: lighten($brand-color,5) radial-gradient(circle, transparent 1%, lighten($brand-color,5) 1%) center/10000%;
+    transition: background 0s;
+  }
+  &:active {
+    background-color: lighten($brand-color,25);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
   &--roller {
     width: 10rem;
     height: auto;
