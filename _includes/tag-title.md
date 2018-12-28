@@ -1,1 +1,1 @@
-{{ site.data.tags[page.tag] | default: page.tag | append: site.title_sep | append: site.title | prepend: "Tag: " }}
+{% assign page_title = site.data.tags[page.tag] | default: page.tag | append: site.title_sep | append: site.title | prepend: "Tag: " %}

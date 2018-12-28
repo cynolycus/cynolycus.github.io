@@ -1,47 +1,41 @@
-{% capture page_image %}{% include post/image.md %}{% endcapture %}
-{% capture page_title %}
-  {% include {{layout.title_include | default:"title" | append: ".md"}} %}
-{% endcapture %}
+{% include post/image.md %}
+{% include {{layout.title_include | default:"title" | append: ".md"}} %}
+{% assign image_fallback = site.url | append: "/assets/img/default.png" %}
 <!-- Twitter cards -->
 {% if page_image %}
 <meta name="twitter:card"  content="summary_large_image">
 <meta name="twitter:image" content="{{ page_image }}">
-<meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 {% else %}
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:image" content="{{ image_fallback }}">
-<meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 {% endif %}
+<meta name="twitter:url" content="{{ site.url | append: page.url }}" />
 <meta name="twitter:site"    content="@{{ site.twitter_username }}">
-<meta name="twitter:creator" content="@{{ site.author }}">
+<meta name="twitter:creator" content="@{{ site.twitter_username }}">
 <meta name="twitter:title"   content="{{ page_title }}">
-{% if page.description %}
-<meta name="twitter:description" content="{{ page.description }}">
-{% else %}
-<meta name="twitter:description" content="{{ site.description }}">
-{% endif %}
+<meta name="twitter:description" content="{{ page.description | default: site.description }}">
 <!-- end of Twitter cards -->
 <!-- Open Graph data -->
 <meta property="og:title" content="{{ page_title }}" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-{%if page_image %}
+<meta property="og:url" content="{{ site.url | append: page.url }}" />
+{% if page_image %}
 <meta property="og:image" content="{{ page_image}}" />
 {% else %}
 <meta property="og:image" content="{{ image_fallback }}"/>
-{%endif %}
+{% endif %}
 <meta property="og:description" content="{{ page.description | default: site.description }}" />
 <meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:locale" content="en-US" />
 {%if page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
 {%endif %}
-{%if page.modified_date %}
+{%if page.last_modified_atlast_modified_at %}
   <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}" />
 {%endif %}
 {%if page.tags %}
   {% for tag in page.tags %}
-    <meta property="article:tag" content="{{ tag | escape }}" />
+    <meta property="article:tag" content="{{ site.data.tags[tag] | default: tag | escape }}" />
   {% endfor %}
 {%endif %}
 <!-- end of Open Graph data -->

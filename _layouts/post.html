@@ -3,10 +3,10 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
-    {% capture post_image %}{%- include post/image.md -%}{% endcapture %}
-    {% if post_image %}
+    {% include post/image.md %}
+    {% if page_image %}
       <div class="o-banner">
-        <img class="o-banner__image" src="{{post_image}}" alt="{{page.description | escape}}" title="{{page.title | escape }}">
+        <img class="o-banner__image" src="{{page_image}}" alt="{{page.description | escape}}" title="{{page.title | escape }}">
         {% assign page_title = page.title | split: ":" | first %}
         {% assign page_subtitle = page.title | split: ":" | last %}
         <div class="o-banner__headline">
