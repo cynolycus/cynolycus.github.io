@@ -11,7 +11,9 @@
  "components/splash",
  "breadcrumb";
 
-
+.wrapper {
+  position: relative;
+}
  .jumbotron {
      text-align: center;
      overflow: hidden;
