@@ -11,6 +11,6 @@
 {% for image in images %}
   {% assign image_name = image.basename | slugify | downcase %}
   {% if image_name == page_name %}
-    {{ assign page_image = site.url | append: image.path }}
+    {% assign page_image = site.url | append: image.path %}
   {% endif %}
 {% endfor %}
