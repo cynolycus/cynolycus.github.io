@@ -1,4 +1,12 @@
 .c-splash {
+  position:relative;
+    background-image:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1)),url(/assets/img/default.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+     width: 100%;
+
   &__item {
   }
 }

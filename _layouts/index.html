@@ -1,7 +1,6 @@
 ---
 layout: compress
 ---
-
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html  -%}
@@ -10,14 +9,15 @@ layout: compress
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2G9W9S"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-    <main id="page-content" class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <main id="page-content" class="page-content c-splash" aria-label="Content">
+      <div class="wrapper ">
         <div class="home">
           <div class="jumbotron">
+            {% include avatar.html %}
             <h1 class="page-heading">Welcome to {{ site.title }}</h1>
             <p>{{ site.description }}</p>
             <hr class="o-post__hr"/>
-            <div class="c-splash">
+            <div>
               {% include button/roller.html text="Blog" link="blog" %}
               {% include button/roller.html text="About" link="about" %}
               {% include button/roller.html text="Series" link="series" %}

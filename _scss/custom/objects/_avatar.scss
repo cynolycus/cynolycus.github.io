@@ -3,7 +3,7 @@
   line-height: 0;		/* remove line-height */
 	display: inline-block;	/* circle wraps image */
 	margin: 5px;
-  border: 3px solid transparentize($brand-color,0.5);
+  border: 3px solid transparentize($brand-color,0.75);
 	border-radius: 50%;	/* relative value */
 	transition: linear 0.25s;
   height: 128px;
@@ -16,6 +16,10 @@
     transition: ease-out 0.2s;
     -webkit-transition: ease-out 0.2s;
     border: 3px solid $brand-color;
-    background-color:transparentize($brand-color,0.5);
+    background-color:transparentize($brand-color,0.75);
+  }
+  &--sm {
+    width: 64px;
+    height: 64px;
   }
 }

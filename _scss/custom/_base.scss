@@ -13,11 +13,11 @@
 
 
  .jumbotron {
-     border-color: $brand-color;
      text-align: center;
      overflow: hidden;
      color: $brand-color;
      padding: 5px;
+
      .page-heading {
        margin:0;
      }
@@ -38,7 +38,7 @@ blockquote{
 }
 hr.o-post__hr {
     display:block;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from($brand-color), to($background-color));
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from($brand-color), to(transparent));
     border:none;
     color:$background-color;
     height: 0.1rem;
@@ -104,7 +104,5 @@ a:hover {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
   }
-  .c-splash__item {
-    display:block;
-  }
+
 }
