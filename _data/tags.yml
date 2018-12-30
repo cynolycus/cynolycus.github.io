@@ -3,4 +3,9 @@
 #  Tag: Displayname
 # USAGE
 #   {{ site.data.tags[page.tag] | default: page.tag }}
-CSharp: "C#"
+csharp: "C#"
+asp-net-core: "ASP.NET Core"
+view-component: "View Component"
+partial-view: "Partial View"
+razor-page: "Razor Page"
+mvc: "MVC"

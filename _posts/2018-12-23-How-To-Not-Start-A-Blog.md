@@ -3,7 +3,7 @@ title: "How To (Not) Start A Successful Blog: Part 1"
 category: blogging
 excerpt: "Here's some mistakes I've made in the first 30 days of starting this blog/hot mess, and how you can avoid them."
 description: "Here's some mistakes I've made in the first 30 days of starting this blog/hot mess, and how you can avoid them."
-tags: [Blog, SEO, Self]
+tags: [blog, seo, self]
 ---
 
 I'll wager that if you're reading this, you're somewhere on the spectrum between *wanting to make something awesome and not knowing where to start*, and *staring in horror at the dumpster fire you've created, questioning where it all went terribly wrong*. Or maybe you already have a successful blog and just want some entertainment. Either way, let's have an honest conversation about self-sabotage involved with getting a blog off the ground and how to break through them.

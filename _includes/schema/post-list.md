@@ -2,12 +2,17 @@
     "itemListElement": [
       {% for post in include.posts %}
       {
+        {% assign keywords = "" | split: "" %}
+        {% for tag in post.tags %}
+          {% assign tag_name = site.data.tags[tag] | default: tag %}
+          {% assign keywords = keywords | push: tag_name %}
+        {% endfor %}
         "@type":"BlogPosting",
         "@id": "https://cynolyc.us{{ post.url }}",
         "name":{{ post.title | escape | jsonify }},
         "headline": {{ post.title | escape | jsonify }},
         "description": {{ post.description | strip_html | jsonify }},
-        "keywords":{{ post.tags  | join: ',' | escape | jsonify }},
+        "keywords":"{{ keywords | join: ", " | escape }}",
         "wordCount":"{{ wordcount }}",
         "url":"https://cynolyc.us{{ post.url }}",
         "datePublished":{{ post.date | date: '%Y-%m-%d'  | jsonify }},

@@ -8,7 +8,7 @@ excerpt: Modularize all the things! New to ASP.NET Core, View Components are a g
 description: New to ASP.NET Core, View Components are a great tool for modularizing your MVC or Razor Pages site and empowering your Partial Views.
 applies_to: ASP.NET Core
 applies_to_vers: [1.0,1.1,2.0,2.1]
-tags: [CSharp, ASP.NET Core, Partial Views, Razor Pages, View Components, MVC]
+tags: [csharp, asp-net-core, partial-view, razor-page, view-component, mvc]
 
 ---
 {% include kramdown/ALDs.md %}
@@ -16,6 +16,7 @@ tags: [CSharp, ASP.NET Core, Partial Views, Razor Pages, View Components, MVC]
 * TOC
 {:toc}
 ---
+{{ site.content_seperator }}
 ## What are View Components?
 Introduced with the advent of ASP.NET Core, a View Component is essentially a partial View with business logic, or conversely a miniature Controller. Their versatility makes View Components a great tool for taking a modular approach in designing your MVC application, but they aren't necessarily appropriate for every situation. If you've worked with MVC and partial Views before .NET Core, View Components will seem familiar at best, or redundant at worst. They're very simple in principle, and very powerful if leveraged appropriately.
 ### What they are
@@ -38,5 +39,4 @@ Continue to {{next_post}}
 ### Footnotes
 [^1]: By default, a View Component's `Layout`{:razor} is null. Consequently, `section`{:razor k} blocks will never be rendered, nor throw exceptions. While this can be overridden, it's outside of the scope of this post. It will be covered more in-depth in a future submission.
 [^2]: Specifically `OnActionExecuting()`{:cs m token} and `OnActionExecuted()`{:cs m token}. As will be covered later in this series, it is still possible to leverage *some* filters.
-
 *[Future You]: In my experience, usually Next-Monday You.

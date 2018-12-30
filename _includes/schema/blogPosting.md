@@ -1,10 +1,16 @@
  "@context":"http://schema.org",
  "@type":"BlogPosting",
  "@id": "https://cynolyc.us{{ page.url }}",
- "articleBody": {{ page.content | strip_html | jsonify }},
+ {% assign article_body = page.content | split: site.content_seperator %}
+ "articleBody": "{{ article_body[1] | default: page.content | strip_html | strip }}",
  "name":"{{ page.title | escape }}",
  "headline":"{{ page.title | escape }}",
- "keywords":"{{ page.tags | join: ',' | escape }}",
+  {% assign keywords = "" | split: "" %}
+  {% for tag in page.tags %}
+    {% assign tag_name = site.data.tags[tag] | default: tag %}
+    {% assign keywords = keywords | push: tag_name %}
+  {% endfor %}
+ "keywords":"{{ keywords | join: ', ' | escape }}",
  "wordCount":"{{ page.content | number_of_words }}",
  "url":"https://cynolyc.us{{ page.url }}",
  "datePublished":"{{ page.date | date: '%Y-%m-%d'  }}",

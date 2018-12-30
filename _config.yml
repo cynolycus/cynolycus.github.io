@@ -14,7 +14,7 @@ github_username:  cynolycus
 twitter_username: cynolycus
 linkedin_username: bmsochor
 instagram_username: cynolycus
-
+content_seperator: "<!--content-->"
 #collections
 collections:
   posts:

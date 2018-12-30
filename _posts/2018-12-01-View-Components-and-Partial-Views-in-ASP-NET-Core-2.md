@@ -8,7 +8,7 @@ excerpt: Here we'll touch on how to create a simple View Component and return a 
 description: Here we'll touch on how to create a simple View Component and return a Partial View (or not!)
 applies_to: ASP.NET Core
 applies_to_vers: [1.0,1.1,2.0,2.1]
-tags: [CSharp, ASP.NET Core,Partial Views, Razor Pages, View Components, MVC]
+tags: [csharp, asp-net-core, partial-view, razor-page, view-component, mvc]
 ---
 {% include kramdown/ALDs.md %}
 {% include post/get-prev.md link_title="What are View Components?" %}

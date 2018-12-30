@@ -8,7 +8,7 @@ excerpt: Let's explore the different ways to invoke a View Component from a Razo
 description: Let's explore the different ways to invoke a View Component from a Razor view or Controller and test what we've learned!
 applies_to: ASP.NET Core
 applies_to_vers: [1.0,1.1,2.0,2.1]
-tags: [CSharp, ASP.NET Core, Partial Views, Razor Pages, View Components, MVC]
+tags: [csharp, asp-net-core, partial-view, razor-page, view-component, mvc]
 
 ---
 {% include kramdown/ALDs.md %}
