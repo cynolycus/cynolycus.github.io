@@ -1,20 +1,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  {% assign site_desc = "" %}
-  {% if page.description %}
-    {% assign site_desc =  page.description %}
-  {% else %}
-    {% assign site_desc = site.description %}
-  {% endif %}
+  {% assign site_desc =  page.description | default: site.description %}
   <meta name="description" content="{{ site_desc }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
   {%- include {{layout.title_include | default:"title" | append: ".md"}} -%}
   <title>{{ page_title }}</title>
   <link rel="canonical" href="https://cynolyc.us{{page.url | relative_url}}">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% include sw-init.html %}
     {% feed_meta %}
-    {%- include analytics.html -%}
     {%- include schema/base.html -%}
+    {%- include analytics.html -%}
     {%- include social/meta.html -%}
 </head>
