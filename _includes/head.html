@@ -8,6 +8,7 @@
   <title>{{ page_title }}</title>
   <link rel="canonical" href="https://cynolyc.us{{page.url | relative_url}}">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% include favicon.html %}
     {% include sw-init.html %}
     {% feed_meta %}
     {%- include schema/base.html -%}
