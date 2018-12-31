@@ -6,7 +6,7 @@
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed; /* <= This one */
      width: 100%;
      &:before {

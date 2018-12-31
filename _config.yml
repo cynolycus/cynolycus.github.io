@@ -8,7 +8,8 @@ url: https://cynolyc.us
 repository: https://github.com/cynolycus/cynolycus.github.io
 author: "Ben Sochor"
 author_email: "admin@cynolyc.us"
-author_logo: "cynolycus-avatar_oil.png"
+author_logo: "/assets/img/cynolycus-avatar_oil.png"
+default_image: "/assets/img/default.png"
 google_analytics: UA-110479654-1
 github_username:  cynolycus
 twitter_username: cynolycus

@@ -6,7 +6,7 @@
 {% else %}
   {% assign page_name = post.slug  | downcase %}
 {% endif %}
-{% assign image_fallback =  site.url | append: "/assets/img/default.png" %}
+{% assign image_fallback =  site.url | append: site.default_image %}
 {% assign images = site.static_files | where: "image", true %}
 {% for image in images %}
   {% assign image_name = image.basename | slugify | downcase %}

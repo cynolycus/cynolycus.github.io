@@ -11,7 +11,8 @@ const PRECACHE_URLS = [
   './', // Alias for index.html
   '/assets/css/main.css',
   '/assets/minima-social-icons.svg',
-  '/assets/img/cynolycus-avatar_oil.png'
+  '{{site.author_logo}}',
+  '{{site.default_image}}'
 ];
 
 // The install handler takes care of precaching the resources we always need.

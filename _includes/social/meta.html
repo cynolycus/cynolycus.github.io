@@ -1,6 +1,6 @@
 {% include post/image.md %}
 {% include {{layout.title_include | default:"title" | append: ".md"}} %}
-{% assign image_fallback = site.url | append: "/assets/img/default.png" %}
+{% assign image_fallback = site.url | append: site.default_image %}
 <!-- Twitter cards -->
 {% if page_image %}
 <meta name="twitter:card"  content="summary_large_image">
