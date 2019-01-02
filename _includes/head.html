@@ -8,7 +8,9 @@
   <title>{{ page_title }}</title>
   <link rel="canonical" href="https://cynolyc.us{{page.url | relative_url}}">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  {% if pref_post_href %}
+  {% include post/get-next.md %}
+  {% include post/get-prev.md %}
+  {% if prev_post_href %}
   <link rel="prev" href="{{prev_post_href}}">
   {% endif %}
   {% if next_post_href %}

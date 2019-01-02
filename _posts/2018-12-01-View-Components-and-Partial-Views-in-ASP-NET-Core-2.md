@@ -2,6 +2,7 @@
 title: "Using View Components and Partial Views in ASP.NET Core"
 category: asp-net-core
 order: 2
+final: true
 date: 2018-12-01T00:02:00-5:00
 last_modified_at: 2019-01-01
 excerpt: Let's explore the different ways to invoke a View Component from a Razor view or Controller and test what we've learned in our introduction!
