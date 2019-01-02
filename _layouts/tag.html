@@ -9,7 +9,7 @@ title_include: tag-title
   {% endif %}
 {% endfor %}
 {% assign other_tags = other_tags | uniq %}
-{% assign posts = site.posts | where: "tags",page.slug %}
+{% assign posts = site.posts | where: "tags", page.slug %}
 <h1>{{posts.size}} posts filed under <small>{{ site.data.tags[page.slug] | default: page.slug }}</small></h1>
 {% if other_tags.size > 0 %}
 <div>See also: {% include tags.html similar_tags=other_tags %}</div>
