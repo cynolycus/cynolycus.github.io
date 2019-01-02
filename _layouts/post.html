@@ -7,13 +7,12 @@ layout: default
     {% if page_image %}
       <div class="o-banner">
         <img class="o-banner__image" src="{{page_image}}" alt="{{page.description | escape}}" title="{{page.title | escape }}">
-        {% assign page_title = page.title | split: ":" | first %}
-        {% assign page_subtitle = page.title | split: ":" | last %}
+
         <div class="o-banner__headline">
-          <h1 class="post-title p-name ">{{ page_title | escape }}</h1>
-        {% if page_subtitle %}
+          <h1 class="post-title p-name ">{{ page.title | escape }}</h1>
+        {% if page.subtitle %}
           <hr class="o-banner__hr"/>
-          <h2 class="o-banner__subtitle">{{ page_subtitle | escape }}</h2>
+          <h2 class="o-banner__subtitle">{{ page.subtitle | escape }}</h2>
         {% endif %}
         </div>
       </div>

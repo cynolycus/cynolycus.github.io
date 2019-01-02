@@ -1,5 +1,7 @@
 # post.category:
 #   display_name:
 #   ...
-Practical-ASP-NET-Core:
+asp-net-core:
   display_name: "Practical ASP.NET Core"
+how-to-blog:
+  display_name: "How To Blog"

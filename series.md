@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Series
-permalink: /series/
+permalink: /series
 description: Sometimes one post isn't enough. Here's each series covered so far.
 ---
 {% if site.series.size > 0 %}

@@ -15,4 +15,26 @@
 "url": "{{ site.url }}",
 "description": "{{site.description }}",
 "datePublished": "2018-12-01",
-"dateModified":"{{ max_mod_date | date: '%Y-%m-%d' }}"
+"dateModified":"{{ max_mod_date | date: '%Y-%m-%d' }}",
+"author":{
+   "@type":"Person",
+   "name":"Benjamin Sochor",
+   "sameAs":[
+   {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
+   {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}" {%- endif -%}  ]
+},
+"publisher":{
+  "@type":"Organization",
+  "name":"cynolycus",
+  "sameAs":[
+    {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
+    {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}
+    "https://github.com/cynolycus"],
+  "logo": {
+         "@type": "ImageObject",
+         "name": "cynolycusAvatar",
+         "width": "128",
+         "height": "128",
+         "url": "{{site.url}}{{site.author_logo}}"
+     }
+ }

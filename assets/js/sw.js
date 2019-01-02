@@ -2,7 +2,7 @@
 permalink: "/sw.js"
 ---
 const PRECACHE = 'pre-{{site.time}}';
-const RUNTIME = 'runtime';
+const RUNTIME = 'runtime-{{site.time}}';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [

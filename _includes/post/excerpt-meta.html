@@ -1,5 +1,5 @@
 <article class="post">
-  <h1>
+  <h2>
     <a class="post-link" itemprop="url" href="{{ post.url | relative_url }}">
       <span itemprop="name headline">
       {% if include.alt_title %}
@@ -9,7 +9,7 @@
       {% endif %}
       </span>
     </a>
-  </h1>
+  </h2>
   {% if site.author %}
     <span>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a></span>
   {% endif %}

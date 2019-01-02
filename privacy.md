@@ -1,7 +1,7 @@
 ---
-  layout: default
-  title: Privacy Policy
-  date: "2018-12-22"
+layout: default
+title: Privacy Policy
+date: "2018-12-22"
 ---
 # PRIVACY POLICY {#policy}
 {:.no_toc}

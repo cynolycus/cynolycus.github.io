@@ -7,6 +7,5 @@
 {% else %}
   {% assign next_name = name_parts | push: next_val | join: "-" %}
 {% endif %}
-{% capture next_post %}
-**[{{include.link_title}}]({{base_url | append: "/" | append: next_name}})**
-{% endcapture %}
+{% assign next_post_name = include.link_title %}
+{% assign next_post_href = base_url | append: "/" | append: next_name %}

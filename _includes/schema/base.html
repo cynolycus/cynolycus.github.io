@@ -1,5 +1,6 @@
-{% assign structured_data = "schema/" | append: page.schema | append: ".md" %}
-{% if page.schema %}
+{% assign page_schema = page.schema | default: layout.schema %}
+{% assign structured_data = "schema/" | append: page_schema | append: ".md" %}
+{% if page_schema %}
   <script type="application/ld+json">
   {
     {% include {{structured_data}} %}

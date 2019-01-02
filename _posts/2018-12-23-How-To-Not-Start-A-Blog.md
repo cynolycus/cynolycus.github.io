@@ -1,14 +1,14 @@
 ---
-title: "How To (Not) Start A Successful Blog: Part 1"
-category: blogging
-excerpt: "Here's some mistakes I've made in the first 30 days of starting this blog/hot mess, and how you can avoid them."
-description: "Here's some mistakes I've made in the first 30 days of starting this blog/hot mess, and how you can avoid them."
+title: "How To NOT Start A Successful Blog: Part 1"
+categories: how-to-blog
+last_modified_at: 2019-01-01
+excerpt: "Here's some mistakes I've made in the first 30 days of starting this blog and how you can avoid them."
+description: "Here's some mistakes I've made in starting this blog and how you can avoid them. If you're reading this, you're somewhere between wanting to make something awesome and not knowing where to start, and staring in horror at the dumpster fire you've created, questioning where it all went terribly wrong."
 tags: [blog, seo, self]
+redirect_from: "/blog/blogging/How-To-Not-Start-A-Blog"
 ---
 
-I'll wager that if you're reading this, you're somewhere on the spectrum between *wanting to make something awesome and not knowing where to start*, and *staring in horror at the dumpster fire you've created, questioning where it all went terribly wrong*. Or maybe you already have a successful blog and just want some entertainment. Either way, let's have an honest conversation about self-sabotage involved with getting a blog off the ground and how to break through them.
-
-I've noticed a trend in other blogs to put all the fluff at the beginning, and push the important bits to the very bottom of the article, somewhere between self-promoted premium offers page-width advertisements. I'm going to avoid doing both of those things and put the meat of the matter first, 'cause I like you folks. Here's a few of the mistakes I've made in the first 30 days of starting this blog, and what you can do to avoid them.
+I'll wager that if you're reading this, you're somewhere on the spectrum between *wanting to make something awesome and not knowing where to start*, and *staring in horror at the dumpster fire you've created, questioning where it all went terribly wrong*. Or maybe you already have a successful blog and just want some entertainment. Either way, I wrote this for you, so let's have real talk about self-sabotage involved with getting a blog off the ground and how we can learn from our mistakes.
 
 ## Wasting Time With Analysis Paralysis
 Off the bat, fighting the urge to "perfect" everything before even getting started has been my greatest obstacle to overcome. We can have a tendency to over think it in lieu of actually producing anything, especially those of us coming from a technical or creative background. For me, it doesn't matter whether it's a blog post, the construction of the site itself, or small things like social media posts. I've flushed countless hours down the drain wrestling with blank pages, or over-engineering details literally nobody will notice.
