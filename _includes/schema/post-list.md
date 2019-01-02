@@ -19,19 +19,26 @@
         "dateModified":{{ post.last_modified_at | date: '%Y-%m-%d'  | jsonify}},
         "author":{
            "@type":"Person",
-           "name":"{{site.author}}",
+           "name":"{{ site.author }}",
            "sameAs":[
-             "https://twitter.com/cynolycus",
-             "https://github.com/cynolycus"]
+           {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
+           {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}" {%- endif -%}  ]
         },
         "publisher":{
           "@type":"Organization",
           "name":"cynolycus",
           "sameAs":[
-            {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}", {%- endif -%}
+            {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
             {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}", {%- endif -%}
-            "https://github.com/cynolycus"]
-         }
+            "https://github.com/cynolycus"],
+          "logo": {
+                 "@type": "ImageObject",
+                 "name": "cynolycusAvatar",
+                 "width": "128 px",
+                 "height": "128 px",
+                 "url": "{{site.url}}{{site.author_logo}}"
+             }
+          }
         }
       {%- if forloop.last == false  -%},{% endif %}
       {% endfor %}
