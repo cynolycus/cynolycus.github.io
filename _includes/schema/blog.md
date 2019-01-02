@@ -18,7 +18,7 @@
 "dateModified":"{{ max_mod_date | date: '%Y-%m-%d' }}",
 "author":{
    "@type":"Person",
-   "name":"Benjamin Sochor",
+   "name":"{{ site.author }}",
    "sameAs":[
    {%- if site.linkedin_username -%}"https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}", {%- endif -%}
    {%- if site.twitter_username -%}"https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}" {%- endif -%}  ]
@@ -33,8 +33,8 @@
   "logo": {
          "@type": "ImageObject",
          "name": "cynolycusAvatar",
-         "width": "128",
-         "height": "128",
+         "width": "128 px",
+         "height": "128 px",
          "url": "{{site.url}}{{site.author_logo}}"
      }
  },

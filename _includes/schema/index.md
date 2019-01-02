@@ -33,8 +33,8 @@
   "logo": {
          "@type": "ImageObject",
          "name": "cynolycusAvatar",
-         "width": "128",
-         "height": "128",
+         "width": "128 px",
+         "height": "128 px",
          "url": "{{site.url}}{{site.author_logo}}"
      }
  }
