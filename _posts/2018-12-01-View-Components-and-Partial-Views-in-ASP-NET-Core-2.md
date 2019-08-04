@@ -18,8 +18,6 @@ redirect_from:
 {% include kramdown/ALDs.md %}
 {% include post/get-prev.md link_title="What are View Components?" %}
 
-Already know **[What View Components Are?]({{prev_post_href}})** If so, continue reading!
-
 ---
 * TOC
 {:toc}
@@ -308,10 +306,12 @@ For the miniature View:
 <span>`@(`{:razor}`await`{:.k} `Component`{:.nc}.`InvokeAsync`{:.nf}<`SidebarViewComponent`{:.nc}>(`new`{:.k} {useMini = `true`{:.k}})`)`{:razor}
 </span>{:blk cs}
 
->#### **DISCLAIMER**
+>**DISCLAIMER**{: .c-blockquote__title}
 >This is an example to showcase what we've discussed so far; production-ready code should have substantially more thought put into the "why" and "how", and probably some inline comments for Future You and your team!
 
 ## See Also
+
+* Did you miss the first post, **[What View Components Are?]({{prev_post_href}})**?
 * Microsoft Docs:
   - [View components in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-2.2) By [Rick Anderson](https://twitter.com/RickAndMSFT)
   
