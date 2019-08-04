@@ -24,9 +24,6 @@
                 {% endcapture %}
                 {% capture prev_part %}
                     {{- prev_part }}/{{ current_part -}}
-
-                    {{ site.data.series[current_part].display_name }}
-                    {{ site.data.series[current_part].display_name }}
                 {% endcapture %}
                 {% assign current_name = site.data.series[current_part].display_name | default: current_part %}
                 {% assign crumb_index = forloop.index | plus: pos %}
