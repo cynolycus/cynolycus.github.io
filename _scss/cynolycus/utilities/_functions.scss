@@ -1,0 +1,75 @@
+@function code-color($key, $variant) {
+	$map: map-get($code-colors, $key);
+	@return map-get($map, $variant);
+}
+@function color($key, $type: base, $variant: null) {
+	// Start by getting our scope, ex. "Primary", "Secondary", etc.
+	$scope: map-get($colors, $key);
+	// If a variant is set, we'll drill down to that level before returning the target color.
+	@if ($variant != null) {
+		$selection: map-get($scope, $variant);
+		@return map-get($selection, $type);
+	}
+	// If no variant is set, we'll assume the scope's values should be used.
+	@else {
+		@return map-get($scope, $type);
+	}
+}
+@function map-get-next($map, $current-key) {
+	$keys: map-keys($map);
+	$i: index($keys, $current-key);
+	@if ($i + 1 > length($keys)) {
+		@return null;
+	} @else {
+		@return map-get($map, nth($keys, $i + 1));
+	}
+}
+
+@mixin get-syntax-colors(
+	$inline-class: '.c-code',
+	$block-class: '.c-code-block',
+	$language: 'default',
+	$group-selectors: true
+) {
+	$tokens: map-get($code-colors, $language);
+
+	@if ($group-selectors) {
+		$unique-colors: ();
+		@each $color in map-values($tokens) {
+			@if not index($unique-colors, $color) {
+				$unique-colors: append($unique-colors, $color);
+			}
+		}
+		@each $color in $unique-colors {
+			$hex-value: str-slice('' + $color, 2);
+			%t#{$hex-value} {
+				color: $color;
+			}
+		}
+		@each $token, $color in $tokens {
+			$hex-value: str-slice('' + $color, 2);
+			.#{$token} {
+				@extend %t#{$hex-value};
+			}
+		}
+	} @else {
+		@each $token, $color in map-get($code-colors, $language) {
+			#{$inline-class}.#{$token},
+			#{$block-class} .#{$token} {
+				color: $color;
+			}
+		}
+	}
+}
+@mixin get-syntax-color-overrides(
+	$inline-class: '.c-code',
+	$block-class: '.c-code-block'
+) {
+	@each $language, $tokens in $code-colors {
+		@if $language != 'default' {
+			.language-#{$language} {
+				@include get-syntax-colors($inline-class, $block-class, $language);
+			}
+		}
+	}
+}

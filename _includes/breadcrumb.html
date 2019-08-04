@@ -1,29 +1,40 @@
-{% capture url_parts %} {{ page.url | remove: "/index.html" | replace:'/'," " }}{% endcapture %}
-{% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
+{%- capture url_parts -%}
+    {{ page.url | remove: "/index.html" | replace:'/'," " }}
+{% endcapture %}
+{% capture num_parts %}
+    {{ url_parts | number_of_words | minus: 1 }}
+{% endcapture %}
 {% assign previous="" %}
 {% assign pos = 1 %}
-<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <meta itemprop="position" content="{{pos}}" />
-    <a href="/" itemprop="item"><span itemprop="name">home</span></a>
-  </li>
-   {% if page.layout == "post" or page.layout == "series" %}
-   {% assign pos = pos | plus: 1 %}
-   &#187;
-   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-     <meta itemprop="position" content="{{pos}}" />
-     <a href="/blog" itemprop="item"><span itemprop="name">blog</span></a>
-   </li>
-   {% endif %}
- {% unless num_parts == "0" or num_parts == "-1" %}
-    {% for unused in page.content limit:num_parts %}
-      &#187;
-      {% capture current_part %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
-      {% capture prev_part %}{{ prev_part }}/{{ current_part }}{% endcapture %}
-      {% assign current_name = site.data.series[current_part].display_name | default: current_part %}
-      {% assign crumb_index = forloop.index | plus: pos %}
-        {% include breadcrumb-item.html url=prev_part name=current_name index=crumb_index %}
-      {% capture url_parts %}{{ url_parts | remove_first:current_part }}{% endcapture %}
-    {% endfor %}
-  {% endunless %}
+
+<ol class="o-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+    {% if page.layout == "post" or page.layout == "series" %}
+        {% assign pos = pos | plus: 1 %}
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <meta itemprop="position" content="{{ pos }}"/>
+            <a href="/blog" itemprop="item">
+                <span itemprop="name">blog</span>
+            </a>
+        </li>
+    {% endif %}
+    {% unless num_parts == "0" or num_parts == "-1" %}
+        {% for unused in page.content limit:num_parts %}
+            &#187;
+            {% capture current_part %}
+                {{- url_parts | truncatewords: 1 | remove: '...'	-}}
+            {% endcapture %}
+            {% capture prev_part %}
+                {{- prev_part }}/{{ current_part -}}
+
+                {{ site.data.series[current_part].display_name }}
+                {{ site.data.series[current_part].display_name }}
+            {% endcapture %}
+            {% assign current_name = site.data.series[current_part].display_name | default: current_part %}
+            {% assign crumb_index = forloop.index | plus: pos %}
+            {% include breadcrumb-item.html url=prev_part name=current_name index=crumb_index %}
+            {% capture url_parts %}
+                {{- url_parts | remove_first: current_part -}}
+            {% endcapture %}
+        {% endfor %}
+    {% endunless %}
 </ol>

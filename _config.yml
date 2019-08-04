@@ -1,21 +1,21 @@
 #Site
-locale: "en-US"
-title: "cynolyc.us"
-title_sep: " - "
+locale: 'en-US'
+title: 'cynolyc.us'
+title_sep: ' - '
 tagline: Developing Developers
-description: "Practical solutions and insights for the accidental developer."
+description: 'Practical solutions and insights for the accidental developer.'
 url: https://cynolyc.us
 repository: https://github.com/cynolycus/cynolycus.github.io
-author: "Ben Sochor"
-author_email: "admin@cynolyc.us"
-author_logo: "/assets/img/cynolycus-avatar_oil.png"
-default_image: "/assets/img/default.png"
+author: 'Ben Sochor'
+author_email: 'admin@cynolyc.us'
+author_logo: '/assets/img/cynolycus.png'
+default_image: '/assets/img/default.png'
 google_analytics: UA-110479654-1
-github_username:  cynolycus
+github_username: cynolycus
 twitter_username: cynolycus
 linkedin_username: bmsochor
 instagram_username: cynolycus
-content_seperator: "<!--content-->"
+content_seperator: '<!--content-->'
 #collections
 collections:
   posts:
@@ -28,24 +28,24 @@ collections:
     output: true
     permalink: /tag/:slug
 defaults:
-- scope:
-    path: ""
-    type: "posts"
-  values:
-    layout: "post"
-    schema: "blogPosting"
-- scope:
-    path: ""
-    type: "tags"
-  values:
-    layout: "tag"
-- scope:
-    path: "assets/img"
-  values:
-    image: true
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: 'post'
+      schema: 'blogPosting'
+  - scope:
+      path: ''
+      type: 'tags'
+    values:
+      layout: 'tag'
+  - scope:
+      path: 'assets/img'
+    values:
+      image: true
 #Files
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+encoding: 'utf-8'
+markdown_ext: 'md'
 header_pages:
   - blog.md
   - about.md
@@ -61,13 +61,28 @@ keep_files:
 
 # Build settings
 markdown: kramdown
-theme: minima
 show_excerpts: true
 wpm: 200
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      css: class
+      wrap: true
+      disable: false
+      css_class: 'c-code-block'
+    span:
+      css: class
+      wrap: true
+      disable: false
+      css_class: 'c-code'
+
 #Sass
 sass:
-    style: compressed
-    sass_dir: _scss
+  style: compressed
+  sass_dir: _scss
 
 #Plug-ins
 plugins:

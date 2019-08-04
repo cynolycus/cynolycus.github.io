@@ -1,0 +1,86 @@
+$colors: (
+	background: (
+		base: #fefefe,
+		on: #080808
+	),
+	background--dark: (
+		base: #cbcbcb,
+		on: #080808
+	),
+	background--light: (
+		base: #fff,
+		on: #000
+	),
+	surface: (
+		base: #8691a3,
+		on: #fff
+	),
+	surface--dark: (
+		base: #596474,
+		on: #fff
+	),
+	surface--light: (
+		base: #b6c1d4,
+		on: #000
+	),
+	primary: (
+		base: #2767b0,
+		on: #fff,
+		50: (
+			base: #e5edf6,
+			on: #000
+		),
+		100: (
+			base: #bed1e7,
+			on: #000
+		),
+		200: (
+			base: #93b3d8,
+			on: #000
+		),
+		300: (
+			base: #6895c8,
+			on: #000
+		),
+		400: (
+			base: #477ebc,
+			on: #fff
+		),
+		500: (
+			base: #2767b0,
+			on: #fff
+		),
+		600: (
+			base: #235fa9,
+			on: #fff
+		),
+		700: (
+			base: #1d54a0,
+			on: #fff
+		),
+		800: (
+			base: #174a97,
+			on: #fff
+		),
+		900: (
+			base: #0e3987,
+			on: #fff
+		),
+		A100: (
+			base: #b8ceff,
+			on: #000
+		),
+		A200: (
+			base: #85abff,
+			on: #000
+		),
+		A400: (
+			base: #5287ff,
+			on: #000
+		),
+		A700: (
+			base: #3876ff,
+			on: #fff
+		)
+	)
+);

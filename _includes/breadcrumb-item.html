@@ -1,4 +1,6 @@
 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-  <meta itemprop="position" content="{{ include.index }}" />
-  <a href="{{include.url}}" itemprop="item"><span itemprop="name">{{ include.name }}</span></a>
+    <meta itemprop="position" content="{{- include.index -}}"/>
+    <a href="{{- include.url -}}" itemprop="item">
+        <span itemprop="name">{{- include.name -}}</span>
+    </a>
 </li>

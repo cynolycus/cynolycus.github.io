@@ -3,7 +3,8 @@ layout: default
 title: Privacy Policy
 date: "2018-12-22"
 ---
-# PRIVACY POLICY {#policy}
+# PRIVACY POLICY
+{#policy}
 {:.no_toc}
 <small class="post-meta">Last updated: {{page.last_modified_at | default: page.date | date: "%Y-%m-%d" }}</small>
 

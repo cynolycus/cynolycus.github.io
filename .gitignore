@@ -1,6 +1,5 @@
 _site/
 .sass-cache/
-<<<<<<< HEAD
 
 .jekyll-cache/
 
@@ -8,7 +7,9 @@ _site/
 
 ideas/
 drafts/
-=======
 .jekyll-cache/
 .jekyll-metadata
->>>>>>> 09217c1ba69772a3f2c859989eecd1e270f90aa4
+node_modules
+.liquidrc
+.stylelintrc
+

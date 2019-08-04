@@ -1,17 +1,19 @@
 <div class="pagination">
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-      <a href="/blog/" class="previous">Previous</a>
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a class="previous" href="/blog/">Previous</a>
+        {% else %}
+            <a class="previous" href="/blog/{{ paginator.previous_page }}">Previous</a>
+        {% endif %}
     {% else %}
-      <a href="/blog/{{ paginator.previous_page }}" class="previous">Previous</a>
+        <span class="previous">Previous</span>
     {% endif %}
-  {% else %}
-    <span class="previous">Previous</span>
-  {% endif %}
-  <span class="page_number">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="/blog/{{ paginator.next_page }}" class="next">Next</a>
-  {% else %}
-    <span class="next">Next</span>
-  {% endif %}
+    <span class="page_number">{{ paginator.page }}
+        of
+        {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+        <a class="next" href="/blog/{{ paginator.next_page }}">Next</a>
+    {% else %}
+        <span class="next">Next</span>
+    {% endif %}
 </div>

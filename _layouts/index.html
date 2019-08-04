@@ -3,30 +3,15 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html  -%}
-  <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2G9W9S"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-    <main id="page-content" class="page-content c-splash" aria-label="Content">
-      <div class="wrapper ">
-        <div class="home">
-          <div class="jumbotron">
-            {% include avatar.html %}
-            <h1 class="page-heading">Welcome to {{ site.title }}</h1>
-            <p>{{ site.description }}</p>
-            <hr class="o-post__hr"/>
-            <div>
-              {% include button/ripple.html text="Blog" link="blog/" %}
-              {% include button/ripple.html text="About" link="about" %}
-              {% include button/ripple.html text="Series" link="series/" %}
-            </div>
-          </div>
-          {{ content }}
-        </div>
-      </div>
-    </main>
-    {%- include footer.html -%}
-  </body>
+    {%- include head.html  -%}
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-M2G9W9S" style="display:none;visibility:hidden" width="0"></iframe>
+        </noscript>
+        {%- include header.html -%}
+        <!-- End Google Tag Manager (noscript) -->
+        <main aria-label="Content" class="o-page-content">{{ content }}</main>
+        {%- include footer.html -%}
+    </body>
 </html>

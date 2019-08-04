@@ -1,14 +1,17 @@
 
-{:ic: .o-code}
-{:token: .o-code .o-code--token}
-{:ph: .o-code .o-code__ph}
+{:ic: .c-code}
+{:tkn: .o-token}
 
-{:cs: .o-code .o-code--csharp}
-{:razor: .o-code .o-code--razor}
+{:ph: .c-code-ph}
+{:blk: .c-code-block}
 
-{:g: .o-code__g}
-{:m: .o-code__m}
-{:k: .o-code__k}
-{:cl: .o-code__cl}
-{:ucl: .o-code__ucl}
-{:cm: .o-code__cm}
+{:cs: .c-code .c-code--csharp}
+{:razor:  .c-code .c-code--razor}
+{:html: .c-code .c-code--html}
+
+{:g: .c-code__g}
+{:m: .c-code__m}
+{:k: .c-code__k}
+{:cl: .c-code__cl}
+{:ucl: .c-code__ucl}
+{:cm: .c-code__cm}

@@ -1,32 +1,40 @@
-<article class="post">
+<article class="c-excerpt">
   <h2>
-    <a class="post-link" itemprop="url" href="{{ post.url | relative_url }}">
+    <a class="c-post__link" itemprop="url" href="{{ post.url | relative_url }}">
       <span itemprop="name headline">
-      {% if include.alt_title %}
-      {{include.alt_title}}
-      {% else %}
-      {{ post.title | escape }}
-      {% endif %}
+        {% if include.alt_title %}
+        {{ include.alt_title }}
+        {% else %}
+        {{ post.title | escape }}
+        {% endif %}
       </span>
     </a>
   </h2>
   {% if site.author %}
-    <span>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a></span>
+  <span
+    >By
+    <a class="p-author" href="mailto:{{ site.author_email }}">{{
+      site.author
+    }}</a></span
+  >
   {% endif %}
-  <p class="post-meta">
-    {%- unless include.hide_series -%}
-      {% include post/components/series.html %}
-    {%- endunless -%}
-    {%- include post/components/date.html text="Published" date=post.date -%}
-    {% if post.last_modified_at %}
-    • {% include post/components/date.html text="Updated" date=post.last_modified_at %}
-    {% endif %}
-</p>
-{% if site.show_excerpts %}
-  {% unless include.hide_excerpt %}
+  <div class="c-excerpt__meta">
+    <ul>
+      {%- unless include.hide_series or site.data.series[post.category] == nil
+      -%}
+      <li>{% include post/components/series.html %}</li>
+      {%- endunless -%}
+      <li>
+        {%- include post/components/date.html text="Published" date=post.date
+        -%} {% if post.last_modified_at %} • {% include
+        post/components/date.html text="Updated" date=post.last_modified_at %}
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+  {% if site.show_excerpts %} {% unless include.hide_excerpt %}
   <p>
     {{ post.excerpt }}
   </p>
-  {% endunless %}
-{% endif %}
+  {% endunless %} {% endif %}
 </article>

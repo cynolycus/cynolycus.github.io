@@ -1,0 +1,35 @@
+.c-code {
+	padding: 0px;
+	white-space: pre-wrap;
+	font-family: monospace, -moz-fixed, sans-serif;
+}
+.c-code-block {
+	border: 1px solid color(primary, base, A100);
+	border-radius: $base-border-radius;
+	background-color: color(background--light, base);
+	padding: $spacing-unit / 4;
+	white-space: pre-wrap;
+	word-break: break-word;
+	display: block;
+}
+.c-code-ph {
+	border-style: dotted;
+	border-width: 0px 0px 1px 0px;
+	margin: 0px 4px;
+	font-style: italic;
+	white-space: nowrap;
+	&::before {
+		content: '$';
+	}
+}
+// HTML+Razor overrides
+.c-code--razor {
+	color: #000;
+	background-color: code-color('razor', 'k');
+	&.c-code__k {
+		color: #000;
+		&::before {
+			content: '@';
+		}
+	}
+}

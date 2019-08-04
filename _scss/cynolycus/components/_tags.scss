@@ -1,0 +1,15 @@
+.c-tags {
+	.c-tag {
+		display: inline-block;
+		font-family: monospace, -moz-fixed, sans-serif;
+		padding: 0px 4px;
+		border: 1px solid;
+		border-radius: $base-border-radius;
+		@include badge(color(primary, base), false);
+		-webkit-text-decoration-line: none;
+		text-decoration-line: none;
+		&:hover {
+			@include badge(color(primary, base, 600));
+		}
+	}
+}

@@ -8,7 +8,7 @@ layout: default
   {{ content }}
   {% assign seriesPosts = site.categories[page.category] | where: "order",1 %}
   {% if seriesPosts.size > 0 %}
-      <ul class="post-list">
+      <ul class="c-post-list">
       {% for post in seriesPosts %}
       <li>
         {% include post/excerpt-meta.html hide_series=true %}

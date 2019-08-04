@@ -1,0 +1,212 @@
+/* ------------------------------------*\
+  #BASE
+\* ------------------------------------ */
+*,
+*::before,
+*::after {
+	// Box-sizing inheritence allows for downstream overrides,
+	// where content-box might still be needed.
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+	// We really don't want to inherit these
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+html {
+	// We probably DO want to inherit these
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	@include colors(background);
+
+	font: $base-font-weight calc(#{$small-font-size} + 0.1vmax) /#{$base-line-height}
+		$base-font-family;
+	-webkit-font-kerning: normal;
+	font-kerning: normal;
+
+	@include media-phone {
+		font-size: calc(#{$base-font-size} + 0.1vmax);
+	}
+}
+body {
+	width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure {
+	margin-bottom: $spacing-unit / 2;
+}
+// Let's begin our styling...
+
+main {
+	display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	figure > & {
+		display: block;
+	}
+}
+figcaption {
+	font-size: $small-font-size;
+}
+ul,
+ol {
+	margin-left: $spacing-unit;
+}
+
+li {
+	> ul,
+	> ol {
+		margin-bottom: 0;
+	}
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: $base-font-weight + 100;
+}
+
+.wrapper {
+	padding-right: $spacing-unit / 2;
+	padding-left: $spacing-unit / 2;
+	margin-right: auto;
+	margin-left: auto;
+	@include media-desktop {
+		padding-right: $spacing-unit;
+		padding-left: $spacing-unit;
+		min-width: map-get($breakpoints, 'desktop');
+		max-width: 70%;
+	}
+}
+
+code,
+pre {
+	font-family: monospace, -moz-fixed, sans-serif;
+	font-size: 0.9rem;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+.footnotes {
+	font-size: 0.9em;
+}
+blockquote {
+	position: relative;
+	padding-left: 1em;
+	border-left: 5px solid color(primary, base, A100);
+	font-family: serif;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: 100;
+	font-size: 0.9em;
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+hr {
+	display: block;
+	background: -webkit-gradient(
+		radial,
+		50% 50%,
+		0,
+		50% 50%,
+		150,
+		from(color(primary, base, A100)),
+		to(transparent)
+	);
+	border: none;
+	height: 2px;
+	margin-bottom: 4px;
+}
+#markdown-toc {
+	list-style: none;
+	font-weight: bold;
+	width: auto;
+	ul {
+		width: auto;
+	}
+	li {
+		width: auto;
+	}
+	ul li {
+		font-weight: normal;
+		ul li {
+			font-size: 0.9em;
+			list-style-type: none;
+			ul li {
+				font-style: italic;
+				list-style-type: none;
+			}
+		}
+	}
+}
+
+a {
+	color: color(primary, base);
+	text-decoration: none;
+	-webkit-text-decoration-line: none;
+	text-decoration-line: none;
+
+	&:visited {
+		color: color(primary, base, 600);
+	}
+
+	&:hover {
+		color: color(primary, base, A200);
+	}
+
+	.social-media-list &:hover {
+		text-decoration: none;
+
+		.username {
+			text-decoration: underline;
+		}
+	}
+}
+
+.footnote {
+	padding-left: 2px;
+}
+.footer-col-1,
+.footer-col-4 {
+	width: calc(30% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2,
+.footer-col-3 {
+	width: calc(20% - (#{$spacing-unit} / 2));
+}
+
+.post-meta {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.social-media-list {
+	li + li {
+		padding-top: 5px;
+	}
+}

@@ -1,0 +1,183 @@
+/***
+* Base Colors
+***/
+$hl-keyword-color: #0101fd;
+$hl-comment-color: #d64;
+$hl-namespace-color: #006693;
+$hl-method-color: #0268bd;
+$hl-type-color: #298874;
+$hl-generic-color: #6cc449;
+$hl-primitive-color: #0101fd;
+$hl-usertype-color: #3faf5b;
+$hl-literal-color: #000;
+$hl-operator-color: #00f;
+
+/*** Rogue Tokens Template
+* // Other
+*    x: #,
+*    // Error
+*    err: #, // Error
+*    // Comment
+*    c: #, // Single
+*    cm: #, // Multi-line
+*    cp: #, // Preproc
+*    c1: #, // Single (EOL)
+*    cs: #, // Special
+*    // Keyword
+*    k: #, // .
+*    kt: #, // Type
+*    kr: #, // Reserved
+*    kp: #, // Pseudo
+*    kn: #, // Namespace
+*    kd: #, // Declaration
+*    kc: #, // Constant
+*    // Generic
+*    g: #, // Generic
+*    gd: #, // Deleted
+*    gr: #, // Error
+*    gh: #, // Heading
+*    go: #, // Output
+*    gt: #, // Traceback
+*    gl: #, // Lineno
+*
+*    gp: #, // Prompt
+*    gs: #, // Strong
+*    gu: #, // Subheading
+*    ge: #, // Emphasis
+*
+*    //Name
+*    na: #, // Attribute
+*    nb: #, // Built-in
+*    bp: #, // Built-in Pseudo
+*    nc: #, // Class
+*    no: #, // Constant
+*    ni: #, // Entity
+*    ne: #, // Exception
+*    nf: #, // Func
+*    py: #, // Property
+*    nl: #, // Label
+*    nn: #, // Namespace
+*    nx: #, // Other
+*    nt: #, // Tag
+*    nv: #, // Var
+*    vi: #, // Var.Instance
+*    vc: #, // Var.Class
+*    vg: #, // Var.Global
+*    // Operator
+*    o: #, // .
+*    ow: #, // Word
+*    //Punctuation
+*    p: #,
+*    // Literal
+*    l: #,
+*    ld: #, // Date
+*    s: #, // String
+*    m: #, // Number
+*    // Literal.String
+*    sb: #, 
+*    sc: #, // Char
+*    sd: #, // Doc
+*    se: #, // Single
+*    sh: #, // Heredoc
+*    si: #, // Interpol
+*
+*    sr: #, // Regex
+*    s1: #, // Single
+*    s2: #,  // Double
+*    ss: #, // Symbol
+*    sx: #, //Other
+*    //Literal.Number
+*    mf: #, // Float
+*    mh: #, // Hex
+*    mi: #, // Int
+*    il: #, // Long
+*    mo: #, // Oct
+*    mx: #, // Hex
+*    mb: # // Bin
+***/
+
+$code-colors: (
+	'default': (
+		x: #000,
+		err: #f00,
+		c: $hl-comment-color,
+		cm: $hl-comment-color,
+		cp: $hl-comment-color,
+		c1: $hl-comment-color,
+		cs: $hl-comment-color,
+		k: $hl-keyword-color,
+		kt: $hl-keyword-color,
+		kr: $hl-keyword-color,
+		kp: $hl-keyword-color,
+		kn: $hl-keyword-color,
+		kd: $hl-keyword-color,
+		kc: $hl-keyword-color,
+		g: $hl-generic-color,
+		gd: $hl-generic-color,
+		gr: $hl-generic-color,
+		gh: $hl-generic-color,
+		go: $hl-generic-color,
+		gt: $hl-generic-color,
+		gl: $hl-generic-color,
+		gp: $hl-generic-color,
+		gs: $hl-generic-color,
+		gu: $hl-generic-color,
+		ge: $hl-generic-color,
+		na: $hl-namespace-color,
+		nb: $hl-namespace-color,
+		bp: $hl-namespace-color,
+		n: #000,
+		nc: $hl-type-color,
+		no: $hl-namespace-color,
+		ni: $hl-namespace-color,
+		ne: $hl-namespace-color,
+		nf: $hl-namespace-color,
+		py: $hl-namespace-color,
+		nl: $hl-namespace-color,
+		nn: #000,
+		nx: $hl-namespace-color,
+		nt: $hl-type-color,
+		nv: $hl-namespace-color,
+		vi: $hl-namespace-color,
+		vc: $hl-namespace-color,
+		vg: $hl-namespace-color,
+		o: $hl-operator-color,
+		ow: $hl-operator-color,
+		p: $hl-literal-color,
+		l: $hl-literal-color,
+		ld: $hl-literal-color,
+		s: $hl-literal-color,
+		m: $hl-literal-color,
+		sb: $hl-literal-color,
+		sc: $hl-literal-color,
+		sd: $hl-literal-color,
+		se: $hl-literal-color,
+		sh: $hl-literal-color,
+		si: $hl-literal-color,
+		sr: $hl-literal-color,
+		s1: $hl-literal-color,
+		s2: $hl-literal-color,
+		ss: $hl-literal-color,
+		sx: $hl-literal-color,
+		mf: $hl-literal-color,
+		mh: $hl-literal-color,
+		mi: $hl-literal-color,
+		il: $hl-literal-color,
+		mo: $hl-literal-color,
+		mx: $hl-literal-color,
+		mb: $hl-literal-color
+	),
+	'csharp': (
+		cl: $hl-type-color,
+		ucl: $hl-type-color,
+		k: #0101fd
+	),
+	'razor': (
+		k: rgb(255, 255, 179)
+	),
+	'html': (
+		nt: rgb(51, 156, 226),
+		na: rgb(226, 65, 205),
+		s: rgb(40, 94, 131)
+	)
+);

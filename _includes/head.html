@@ -1,25 +1,39 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  {% assign site_desc =  page.description | default: site.description %}
-  <meta name="description" content="{{ site_desc }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-  {%- include {{layout.title_include | default:"title" | append: ".md"}} -%}
-  <title>{{ page_title }}</title>
-  <link rel="canonical" href="https://cynolyc.us{{page.url | relative_url}}">
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  {% include post/get-next.md %}
-  {% include post/get-prev.md %}
-  {% if prev_post_href %}
-  <link rel="prev" href="{{prev_post_href}}">
-  {% endif %}
-  {% if next_post_href %}
-  <link rel="next" href="{{next_post_href}}">
-  {% endif %}
-    {% include favicon.html %}
-    {% include sw-init.html %}
-    {% feed_meta %}
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    {% assign site_desc =  page.description | default: site.description %}
+    <meta name="description" content="{{ site_desc }}">
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+    {%- include {{layout.title_include | default:"title" | append: ".md"}} -%}
+    <title>{{ page_title }}</title>
+    <link href="https://cynolyc.us{{page.url | relative_url}}" rel="canonical">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <noscript id="deferred">
+        <link rel="stylesheet" href="{{ "/assets/css/deferred.css" | relative_url }}">
+        {%- include favicon.html -%}
+        {%- include analytics.html -%}
+        {%- include social/meta.html -%}
+    </noscript>
+    {%- include sw-init.html -%}
+    {% include post/get-next.md %}
+    {% include post/get-prev.md %}
+    {% if prev_post_href %}
+        <link rel="prev" href="{{prev_post_href}}">
+    {% endif %}
+    {% if next_post_href %}
+        <link rel="next" href="{{next_post_href}}">
+    {% endif %}
+    <script>
+        var loadDeferred = function() {
+          var addNode = document.getElementById('deferred');
+          var replacement = document.createElement('div');
+          replacement.innerHTML = addNode.textContent;
+          document.body.appendChild(replacement);
+          addNode.parentElement.removeChild(addNode);
+        };
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferred, 0); });
+        else window.addEventListener('load', loadDeferred);
+      </script>
     {%- include schema/base.html -%}
-    {%- include analytics.html -%}
-    {%- include social/meta.html -%}
 </head>

@@ -3,9 +3,9 @@ layout: default
 ---
 <div class="home">
   {{ content }}
-  <h1 class="post-list-heading">Recent Posts</h1>
+  <h1 class="c-excerpt__heading">Recent Posts</h1>
   <hr class="o-post__hr"/>
-  <ul class="post-list">
+  <ul class="c-post-list">
     {% for post in site.posts %}
     <li>
       {% include post/excerpt-meta.html %}

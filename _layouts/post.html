@@ -1,28 +1,12 @@
 ---
 layout: default
 ---
-<article class="post">
-  <header class="post-header">
-    {% include post/image.md %}
-    {% if page_image %}
-      <div class="o-banner">
-        <img class="o-banner__image" src="{{page_image}}" alt="{{page.description | escape}}" title="{{page.title | escape }}">
-
-        <div class="o-banner__headline">
-          <h1 class="post-title p-name ">{{ page.title | escape }}</h1>
-        {% if page.subtitle %}
-          <hr class="o-banner__hr"/>
-          <h2 class="o-banner__subtitle">{{ page.subtitle | escape }}</h2>
-        {% endif %}
-        </div>
-      </div>
-    {% else %}
-      <h1 class="post-title p-name">{{ page.title | escape }}</h1>
-    {% endif %}
-    {% include post/meta.html %}
-    {% include tags.html %}
-  </header>
-  <section class="post-content e-content">
-    {{ content }}
-  </section>
+<article class="c-post">
+    <header class="c-post__header">
+        <h1 class="c-post__title">{{ page.title | escape }}</h1>
+        {% include post/meta.html %}
+    </header>
+    <section class="c-post__body">
+        {{ content }}
+    </section>
 </article>

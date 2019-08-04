@@ -1,26 +1,27 @@
 {% unless post %}
-  {% assign post = page %}
+    {% assign post = page %}
 {% endunless %}
-
-{% include avatar.html %}
-{% if site.author %}
-  <h3>By <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a></h3>
-{% endif %}
-{% include sharing.html %}
-<p class="post-meta">
-  {% unless include.hide_series %}
-    {% include post/components/series.html %}
-  {% endunless %}
-
-  {% include post/components/date.html text="Published" date=page.date %}
-
-  {% if page.last_modified_at %}
-  • {% include post/components/date.html text="Updated" date=page.last_modified_at %}
-  {% endif %}
-
-  {% if page.applies_to %}
-  <br/>{% include post/components/applies-to.html %}
-  {% endif %}
-
-  <br/>{% include post/components/wordcount.html %}
-</p>
+<h3>By
+    <a class="p-author" href="mailto:{{site.author_email}}">{{ site.author }}</a>
+</h3>
+<div class="c-post__meta">
+    <div class="c-post__meta-item">
+        {%- include sharing.html -%}
+        {% include post/components/date.html text="Published" date=page.date %}
+        {% if page.last_modified_at %}
+            •
+            {% include post/components/date.html text="Updated" date=page.last_modified_at %}
+        {% endif %}
+        {% unless include.hide_series %}
+            <br/>
+            {% include post/components/series.html %}
+        {% endunless %}
+        {% if page.applies_to %}
+            <br/>{% include post/components/applies-to.html %}
+        {% endif %}
+        <br/>{% include post/components/wordcount.html %}
+    </div>
+    <div class="c-post__meta-item c-post__meta-item--sm">
+        {% include tags.html %}
+    </div>
+</div>

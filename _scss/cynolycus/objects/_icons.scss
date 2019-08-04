@@ -1,0 +1,16 @@
+.o-icon {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 3px;
+	vertical-align: text-top;
+	@at-root {
+		svg#{&} {
+			fill: none;
+			stroke-width: 1px;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke: currentColor;
+		}
+	}
+}

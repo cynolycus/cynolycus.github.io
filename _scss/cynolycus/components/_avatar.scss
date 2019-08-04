@@ -1,0 +1,35 @@
+.c-avatar {
+	display: inline-block;
+	margin: 5px;
+	border: 3px solid color(primary, base, A100);
+	border-radius: 50%;
+	-webkit-transition: ease-out 0.2s;
+	transition: ease-out 0.2s;
+
+	&__img {
+		border-bottom-left-radius: 50%;
+		border-bottom-right-radius: 50%;
+		height: 64px;
+		width: 64px;
+		@include media-tablet {
+			height: 96px;
+			width: 96px;
+		}
+		@include media-desktop {
+			height: 128px;
+			width: 128px;
+		}
+	}
+	&:hover {
+		transition: ease-out 0.2s;
+		-webkit-transition: ease-out 0.2s;
+		border-color: color(primary, base);
+		background-color: color(primary, base, A100);
+	}
+	&--sm {
+		img {
+			width: 64px;
+			height: 64px;
+		}
+	}
+}

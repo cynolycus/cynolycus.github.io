@@ -1,0 +1,108 @@
+// TODO Stateful Theme implementation, able to iterate existing themes
+// And generate t-* context switches where colors are invoked via mixins.
+@mixin color($key, $variant: null) {
+	color: color($key, on, $variant);
+}
+@mixin bg-color($key, $variant: null) {
+	background-color: color($key, base, $variant);
+}
+
+@mixin colors($key, $variant: null) {
+	background-color: color($key, base, $variant);
+	color: color($key, on, $variant);
+}
+@mixin linear-gradient($start-color, $end-color) {
+	color: transparent;
+	background-image: -webkit-gradient(linear, left top, right top, from($start-color), color-stop(0%), to($end-color));
+	background-image: linear-gradient(90deg, $start-color, 0%, $end-color 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+@mixin code-badge($lang, $type, $useBackground: true) {
+	$baseColor: code-color($lang, $type);
+	@include badge($baseColor);
+}
+@mixin badge($baseColor, $useBackground: true) {
+	color: $baseColor;
+	//border-color: $baseColor;
+	@if $useBackground {
+		background-color: lighten($baseColor, 40%);
+	}
+}
+@mixin media-phone($contained: false) {
+	@include media-min('phone', $contained) {
+		@content;
+	}
+}
+
+@mixin media-tablet($contained: false) {
+	@include media-min('tablet', $contained) {
+		@content;
+	}
+}
+
+@mixin media-laptop($contained: false) {
+	@include media-min('laptop', $contained) {
+		@content;
+	}
+}
+@mixin media-desktop($contained: false) {
+	@include media-min('desktop', $contained) {
+		@content;
+	}
+}
+
+@mixin media-min($bp, $next-bp-as-max: false) {
+	@if (not map-has-key($breakpoints, $bp)) {
+		@error "Could not find breakpoint '#{$bp}'";
+	}
+
+	$max-bp: map-get-next($breakpoints, $bp);
+	@if ($next-bp-as-max and $max-bp) {
+		@media screen and (min-width: #{map-get($breakpoints,$bp)}) and (max-width: #{$max-bp - 1}) {
+			@content;
+		}
+	} @else {
+		@media screen and (min-width: #{map-get($breakpoints,$bp)}) {
+			@content;
+		}
+	}
+}
+
+@mixin media-max($bp) {
+	@if (not map-has-key($breakpoints, $bp)) {
+		@error "Could not find breakpoint '#{$bp}'";
+	}
+	@media (max-width: #{map-get($breakpoints,$bp) - 1}) {
+		@content;
+	}
+}
+
+@mixin media($min-bp: null, $max-bp: null) {
+	@if (not $min-bp and not $max-bp) {
+		@error 'Min and Max cannot both be null.';
+	}
+
+	@if ($min-bp) {
+		@if (not map-has-key($breakpoints, $min-bp)) {
+			@error "Could not find breakpoint '#{$min-bp}'";
+		}
+		@if ($max-bp) {
+			@if (not map-has-key($breakpoints, $max-bp)) {
+				@error "Could not find breakpoint '#{$max-bp}'";
+			}
+
+			@media (min-width: #{map-get($breakpoints,$min-bp)}) and (max-width: #{map-get($breakpoints,$max-bp)}) {
+				@content;
+			}
+		} @else {
+			@include media-min($min-bp, false) {
+				@content;
+			}
+		}
+	} @else {
+		@include media-max($max-bp) {
+			@content;
+		}
+	}
+}

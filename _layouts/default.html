@@ -3,19 +3,20 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html  -%}
-  <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2G9W9S"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-    {%- include header.html -%}
-    <main id="page-content" class="page-content" aria-label="Content">
-      <div class="wrapper">
-	      {% include breadcrumb.html %}
-        {{ content }}
-      </div>
-    </main>
-    {% include footer.html %}
-  </body>
+    {%- include head.html  -%}
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-M2G9W9S" style="display:none;visibility:hidden" width="0"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        {%- include header.html -%}
+        <main aria-label="Content" class="o-page-content">
+            <div class="wrapper">
+                {% include breadcrumb.html %}
+                {{ content }}
+            </div>
+        </main>
+        {% include footer.html %}
+    </body>
 </html>

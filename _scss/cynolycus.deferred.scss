@@ -1,0 +1,8 @@
+@charset "utf-8";
+@import 'cynolycus/vars';
+@import 'cynolycus/helpers';
+
+/// DEFAULT SYNTAX HIGHLIGHTING
+@include get-syntax-colors();
+/// LANGUAGE_SPECIFIC OVERRIDES
+@include get-syntax-color-overrides();

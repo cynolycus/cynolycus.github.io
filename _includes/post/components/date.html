@@ -1,2 +1,4 @@
 {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
-<time datetime="{{ include.date | date_to_xmlschema }}"> {{ include.text }} {{ include.date | date: date_format }}</time>
+<time datetime="{{ include.date | date_to_xmlschema }}">
+    {{ include.text }}
+    {{ include.date | date: date_format }}</time>

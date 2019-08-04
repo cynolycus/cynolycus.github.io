@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: Benjamin Sochor is a software engineer working in the healthcare industry, with expertise in SQL, C#, and ASP.NET Core. This site is a collection of lessons learned.
+description: I'm a software engineer working in the healthcare industry, with expertise in ASP.NET Core, C#, and SQL. This site is a collection of lessons learned.
 ---
 
 ## The Site
