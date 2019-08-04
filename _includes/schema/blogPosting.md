@@ -2,16 +2,16 @@
  "@type":"BlogPosting",
  "@id": "https://cynolyc.us{{ page.url }}",
  {% assign article_body = page.content | split: site.content_seperator %}
- "articleBody": "{{ article_body[1] | default: page.content | strip_html | strip }}",
- "name":"{{ page.title | escape }}",
- "headline":"{{ page.title | escape }}",
+ "articleBody": {{ article_body[1] | default: page.content | strip_html | strip | jsonify }},
+ "name":{{ page.title | jsonify }},
+ "headline":{{ page.title | jsonify }},
   {% assign keywords = "" | split: "" %}
   {% for tag in page.tags %}
     {% assign tag_name = site.data.tags[tag] | default: tag %}
     {% assign keywords = keywords | push: tag_name %}
   {% endfor %}
- "keywords":"{{ keywords | join: ', ' | escape }}",
- "wordCount":"{{ page.content | number_of_words }}",
+ "keywords":{{ keywords | join: ', ' | jsonify }},
+ "wordCount":{{ page.content | number_of_words | jsonify }},
  "url":"https://cynolyc.us{{ page.url }}",
  "datePublished":"{{ page.date | date: '%Y-%m-%d'  }}",
  "dateModified":"{{ page.last_modified_at | date: '%Y-%m-%d' }}",
