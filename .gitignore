@@ -12,4 +12,5 @@ drafts/
 node_modules
 .liquidrc
 .stylelintrc
+package-lock.json
 
